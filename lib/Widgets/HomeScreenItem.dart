@@ -52,40 +52,61 @@ class HomeScreenItem extends StatelessWidget {
             ],
           ),
           SizedBox(
-            width: 40,
+            width: 45,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Card(
-              color: colorOfCard,
-              child: Container(
-                width: 200, // TODO: Change width according to screen size
-                child: Column(
-                  children: [
-                    Text(
-                      eventName,
-                      style: TextStyle(
-                        fontFamily: 'Raleway',
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                        fontSize: 23,
+            child: Container(
+              width: 220, // TODO: Change width according to screen size
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+                boxShadow: <BoxShadow>[
+                  new BoxShadow(
+                    color: Color(0x77000000),
+                    blurRadius: 5.0,
+                    offset: new Offset(5.0, 5.0),
+                  ),
+                ],
+              ),
+              child: Card(
+                color: colorOfCard,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(12.0, 8.0, 0.0, 0.0),
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          eventName,
+                          style: TextStyle(
+                            fontFamily: 'Raleway',
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 20,
+                          ),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      eventDescription,
-                      style: TextStyle(
-                        fontFamily: 'Raleway',
-                        color: Colors.white,
-                        fontSize: 12,
+                      SizedBox(
+                        height: 4,
                       ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                  ],
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          eventDescription,
+                          style: TextStyle(
+                            fontFamily: 'Raleway',
+                            color: Colors.white,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
