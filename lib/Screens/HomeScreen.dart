@@ -6,13 +6,15 @@ import '../Providers/EventsProvider.dart';
 
 class HomeScreen extends StatelessWidget {
   // change the colors to match the gradients in the text
-  final Shader linearGradient = LinearGradient(
+  final Shader linearGradientTitle = LinearGradient(
     colors: <Color>[
-      Color(0xffDA44bb),
-      Color(0xff8921aa),
+      Colors.lightBlue,
+      Colors.blue,
+      Colors.purple,
+      Colors.red,
     ],
   ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 200.0, 70.0),
+    Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
   );
 
   @override
@@ -48,11 +50,11 @@ class HomeScreen extends StatelessWidget {
       },
     ];
     return Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: Color(0xff1e2025),
 
       /// all this has to be changed to make the look better ,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff1e2025),
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -78,22 +80,33 @@ class HomeScreen extends StatelessWidget {
               // ),
               // ),
 
-              Text(
-                /// Set some gradient to match the color of text with the poster ///
-                'Blithchron',
-                style: TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.w900,
-                  foreground: Paint()..shader = linearGradient,
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    /// Set some gradient to match the color of text with the poster ///
+                    'Blithchron',
+                    style: TextStyle(
+                      // fontFamily: 'Raleway',
+                      fontSize: 63, // TODO: Change size according to screensize
+                      fontWeight: FontWeight.w900,
+                      foreground: Paint()..shader = linearGradientTitle,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
                 ),
               ),
-              Text(
-                /// Set some gradient to match the color of text with the poster ///
-                'A CONFLUENCE OF ECSTACIES',
-                style: TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.w900,
-                  foreground: Paint()..shader = linearGradient,
+              Center(
+                child: Text(
+                  /// Set some gradient to match the color of text with the poster ///
+                  'A CONFLUENCE OF ECSTACIES',
+                  style: TextStyle(
+                    // fontFamily: 'Raleway',
+                    fontSize: 23, // TODO: Change size according to screensize
+                    fontWeight: FontWeight.w900,
+                    foreground: Paint()..shader = linearGradientTitle,
+                  ),
                 ),
               ),
               SizedBox(
@@ -101,59 +114,69 @@ class HomeScreen extends StatelessWidget {
 
                 /// make this responsive for all screen sizes
               ),
-              Container(
-                /// add all the shadow as there in the design
-                /// first block
-                // color: Colors.black12,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.blue, width: 2.0),
-                  color: Colors.black,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5.0),
-                  ),
-                  boxShadow: <BoxShadow>[
-                    new BoxShadow(
-                      color: Colors.black,
-                      blurRadius: 3.0,
-                      offset: new Offset(10.0, 3.0),
+              Padding(
+                // TODO: 20.0 needs to be changed according to screensize
+                padding: const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
+                child: Center(
+                  child: Container(
+                    /// add all the shadow as there in the design
+                    /// first block
+                    // color: Colors.black12,
+                    decoration: BoxDecoration(
+                      // border: Border.all(color: Colors.blue, width: 2.0),
+                      color: Color(0xff26292e),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20.0),
+                      ),
+                      boxShadow: <BoxShadow>[
+                        new BoxShadow(
+                          color: Colors.black,
+                          blurRadius: 5.0,
+                          offset: new Offset(7.0, 7.0),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Upcoming Events',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.w900),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Text(
+                                  'Upcoming Events',
+                                  style: TextStyle(
+                                      // fontFamily: 'Raleway',
+                                      color: Colors.white,
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w900),
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        ),
+                        Container(
+                          height: 400,
+                          child: ListView.builder(
+                            itemCount: eventsList.length,
+                            itemBuilder: (ctx, i) {
+                              HomeScreenModel currentEvent = eventsList[i];
+                              return HomeScreenItem(
+                                dateDay: currentEvent.dateDay,
+                                dateMonth: currentEvent.dateMonth,
+                                eventName: currentEvent.eventName,
+                                eventDescription: currentEvent.eventDescription,
+                                routeName: currentEvent.routeName,
+                                colorOfCard: currentEvent.color,
+                              );
+                            },
+                          ),
+                        ),
+                      ],
                     ),
-                    Container(
-                      height: 400,
-                      child: ListView.builder(
-                        itemCount: eventsList.length,
-                        itemBuilder: (ctx, i) {
-                          HomeScreenModel currentEvent = eventsList[i];
-                          return HomeScreenItem(
-                            dateDay: currentEvent.dateDay,
-                            dateMonth: currentEvent.dateMonth,
-                            eventName: currentEvent.eventName,
-                            eventDescription: currentEvent.eventDescription,
-                            routeName: currentEvent.routeName,
-                            colorOfCard: currentEvent.color,
-                          );
-                        },
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
               Card(

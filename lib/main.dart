@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           visualDensity: VisualDensity.adaptivePlatformDensity,
+          fontFamily: 'Raleway',
         ),
         home: HomeScreen(),
       ),
