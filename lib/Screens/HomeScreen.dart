@@ -49,6 +49,15 @@ class HomeScreen extends StatelessWidget {
         'route': 'None',
       },
     ];
+
+    //responsive media query
+    final data = MediaQuery.of(context);
+    print(data.size);
+
+    double _screenHeight = data.size.height;
+    double _screenWidth = data.size.width;
+    /////////////////////////
+
     return Scaffold(
       backgroundColor: Color(0xff1e2025),
 
@@ -81,14 +90,17 @@ class HomeScreen extends StatelessWidget {
               // ),
 
               Padding(
-                padding: const EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
+                padding:
+                    EdgeInsets.fromLTRB(_screenWidth * 0.05, 0.0, 0.0, 0.0),
+                // padding: const EdgeInsets.fromLTRB(20.0, 0.0, 0.0, 0.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     /// Set some gradient to match the color of text with the poster ///
                     'Blithchron',
                     style: TextStyle(
-                      fontSize: 63, // TODO: Change size according to screensize
+                      fontSize: _screenHeight * 0.075,
+                      // fontSize: 63, // TODO: Change size according to screensize
                       fontWeight: FontWeight.w900,
                       foreground: Paint()..shader = linearGradientTitle,
                     ),
@@ -101,20 +113,24 @@ class HomeScreen extends StatelessWidget {
                   /// Set some gradient to match the color of text with the poster ///
                   'A CONFLUENCE OF ECSTACIES',
                   style: TextStyle(
-                    fontSize: 23, // TODO: Change size according to screensize
+                    fontSize: _screenHeight * 0.02754,
+                    // fontSize: 23, // TODO: Change size according to screensize
                     fontWeight: FontWeight.w900,
                     foreground: Paint()..shader = linearGradientTitle,
                   ),
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: _screenHeight * 0.0359,
+                // height: 30,
 
                 /// make this responsive for all screen sizes
               ),
               Padding(
+                padding: EdgeInsets.fromLTRB(
+                    _screenWidth * 0.05, 0.0, _screenWidth * 0.05, 0.0),
                 // TODO: width needs to be changed according to screen size
-                padding: const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
+                // padding: const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
                 child: Center(
                   child: Container(
                     /// add all the shadow as there in the design
@@ -136,17 +152,20 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(_screenHeight * 0.0095),
+                          // padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(_screenWidth * 0.03),
+                                // padding: const EdgeInsets.all(12.0),
                                 child: Text(
                                   'Upcoming Events',
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 18,
+                                      fontSize: _screenHeight * 0.0215,
+                                      // fontSize: 18,
                                       fontWeight: FontWeight.w900),
                                 ),
                               ),
@@ -156,7 +175,8 @@ class HomeScreen extends StatelessWidget {
                         Container(
                           /// Height will be fixed, but a different value than 440
                           /// according to height and width of list item
-                          height: 440,
+                          // height: 440,
+                          height: _screenHeight * 0.527,
                           child: ListView.builder(
                             /// @Gautam this doesn't need to be a scrolling list,
                             /// can we make it a static one? It's affecting the
@@ -181,10 +201,13 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 20,
+                // height: 20,
+                height: _screenHeight * 0.02395,
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
+                padding: EdgeInsets.fromLTRB(
+                    _screenWidth * 0.05, 0.0, _screenWidth * 0.05, 0.0),
+                // padding: const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 0.0),
                 child: Center(
                   child: Container(
                     decoration: BoxDecoration(
@@ -202,7 +225,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                     // color: Colors.black,
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(_screenWidth * 0.0203),
+                      // padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
                           Container(
@@ -210,19 +234,24 @@ class HomeScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.all(12.0),
+                                  padding: EdgeInsets.all(_screenWidth * 0.03),
+                                  // padding: const EdgeInsets.all(12.0),
                                   child: Text(
                                     'Discover',
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 18,
+                                        fontSize: _screenHeight * 0.0215,
+                                        // fontSize: 18,
                                         fontWeight: FontWeight.w900),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding:
+                                      EdgeInsets.all(_screenWidth * 0.0203),
+                                  // padding: const EdgeInsets.all(8.0),
                                   child: Container(
-                                    height: 100,
+                                    height: _screenHeight * 0.1198,
+                                    // height: 100,
                                     child: ListView.builder(
                                       scrollDirection: Axis.horizontal,
                                       itemCount: bottomScrollingList.length,
@@ -230,9 +259,12 @@ class HomeScreen extends StatelessWidget {
                                         return InkWell(
                                           onTap: () {},
                                           child: Padding(
-                                            padding: const EdgeInsets.all(2.0),
+                                            padding: EdgeInsets.all(
+                                                _screenWidth * 0.005),
+                                            // padding: const EdgeInsets.all(2.0),
                                             child: Container(
-                                              width: 100,
+                                              width: _screenWidth * 0.2546,
+                                              // width: 100,
                                               decoration: BoxDecoration(
                                                 // color: Color(0x77000000),
                                                 borderRadius: BorderRadius.all(
@@ -254,7 +286,10 @@ class HomeScreen extends StatelessWidget {
                                                     child: Column(
                                                       children: [
                                                         SizedBox(
-                                                          height: 10,
+                                                          height:
+                                                              _screenHeight *
+                                                                  0.01198,
+                                                          // height: 10,
                                                         ),
                                                         Text(
                                                           bottomScrollingList[i]
@@ -266,7 +301,10 @@ class HomeScreen extends StatelessWidget {
                                                           ),
                                                         ),
                                                         SizedBox(
-                                                          height: 10,
+                                                          height:
+                                                              _screenHeight *
+                                                                  0.01198,
+                                                          // height: 10,
                                                         ),
                                                         Icon(
                                                           Icons
