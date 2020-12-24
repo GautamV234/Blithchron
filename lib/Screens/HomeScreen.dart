@@ -54,8 +54,17 @@ class HomeScreen extends StatelessWidget {
     final data = MediaQuery.of(context);
     print(data.size);
 
-    double _screenHeight = data.size.height;
-    double _screenWidth = data.size.width;
+    double _screenHeight;
+    double _screenWidth;
+
+    if (data.orientation == Orientation.portrait) {
+      _screenHeight = data.size.height;
+      _screenWidth = data.size.width;
+    } else {
+      _screenHeight = data.size.width;
+      _screenWidth = data.size.height;
+    }
+
     /////////////////////////
 
     return Scaffold(
