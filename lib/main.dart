@@ -1,4 +1,5 @@
-import 'package:Blith1/Providers/EventsProvider.dart';
+// import 'package:Blith1/Providers/EventsProvider.dart';
+import 'Providers/EventsProvider.dart';
 import 'package:flutter/material.dart';
 import 'Screens/HomeScreen.dart';
 import 'package:provider/provider.dart';
@@ -18,9 +19,11 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           visualDensity: VisualDensity.adaptivePlatformDensity,
+          fontFamily: 'Raleway',
         ),
         home: HomeScreen(),
       ),
