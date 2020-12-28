@@ -3,6 +3,8 @@ import 'Providers/EventsProvider.dart';
 import 'package:flutter/material.dart';
 import 'Screens/HomeScreen.dart';
 import 'package:provider/provider.dart';
+import './Providers/SponsorsProvider.dart';
+import './Screens/SponsorsScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +18,10 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider.value(
           value: EventsDataProvider(),
-        )
+        ),
+        ChangeNotifierProvider.value(
+          value: SponsorDataProvider(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -26,6 +31,9 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Raleway',
         ),
         home: HomeScreen(),
+        routes: {
+          SponsorsScreen.routeName: (ctx) => SponsorsScreen(),
+        },
       ),
     );
   }
