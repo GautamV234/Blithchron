@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../Model/HomeScreenModel.dart';
 import 'package:provider/provider.dart';
 import '../Providers/EventsProvider.dart';
+import '../Screens/SponsorsScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   // change the colors to match the gradients in the text
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
       {
         'name': 'Sponsors',
         'color': [Color(0xffff6ed1), Color(0xffff21e0), Color(0xffff27e0)],
-        'route': 'None',
+        'route': SponsorsScreen.routeName,
       },
       {
         'name': 'CA',
@@ -69,8 +70,6 @@ class HomeScreen extends StatelessWidget {
       _screenHeight = data.size.width;
       _screenWidth = data.size.height;
     }
-
-    /////////////////////////
 
     return Scaffold(
       backgroundColor: Color(0xff1e2025),
@@ -154,9 +153,7 @@ class HomeScreen extends StatelessWidget {
                         Container(
                           height: _screenHeight * 0.68,
                           child: ListView.builder(
-                            /// @Gautam this doesn't need to be a scrolling list,
-                            /// can we make it a static one? It's affecting the
-                            /// scroll of the overall home page
+                            physics: NeverScrollableScrollPhysics(),
                             itemCount: eventsList.length,
                             itemBuilder: (ctx, i) {
                               HomeScreenModel currentEvent = eventsList[i];
@@ -235,7 +232,16 @@ class HomeScreen extends StatelessWidget {
                                       itemCount: bottomScrollingList.length,
                                       itemBuilder: (ctx, i) {
                                         return InkWell(
-                                          onTap: () {},
+                                          onTap: () {
+                                            if (bottomScrollingList[i]
+                                                    ['route'] !=
+                                                'None') {
+                                              Navigator.pushNamed(
+                                                context,
+                                                bottomScrollingList[i]['route'],
+                                              );
+                                            }
+                                          },
                                           child: Padding(
                                             padding: EdgeInsets.fromLTRB(
                                                 _screenWidth * 0.005,
