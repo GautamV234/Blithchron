@@ -12,16 +12,37 @@ class SponsorsScreen extends StatelessWidget {
     final List<SponsorModel> sponsorsList = sponsorsDataProvider.sponsorsList;
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xff1e2025),
+      ),
       body: SafeArea(
           child: Container(
         child: Column(
           children: [
+            SizedBox(
+              height: 30,
+            ),
             Container(
+              height: 70,
+              width: 200,
               padding: EdgeInsets.all(10),
-              child: Text(
+              decoration: BoxDecoration(
+                borderRadius:
+                 BorderRadius.all(
+                   Radius.circular(10.0),
+                  ),
+                  gradient: LinearGradient(
+                    colors: [Color(0xff9a68f8), Color(0xff8a48fd), Color(0xff7320fe)],
+                  ),
+              ),
+              child: Center(
+                child: Text(
                 'Sponsors',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  ),
+              ),
               ),
             ),
             SizedBox(
