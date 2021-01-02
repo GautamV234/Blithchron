@@ -39,7 +39,6 @@ class HomeScreenItem extends StatelessWidget {
       _screenHeight = data.size.width;
       _screenWidth = data.size.height;
     }
-
     /////////////////////////
 
     return InkWell(
@@ -135,7 +134,7 @@ class HomeScreenItem extends StatelessWidget {
                 _screenWidth * 0.025),
             // padding: const EdgeInsets.all(8.0),
             child: Container(
-              width: _screenWidth * 0.63,
+              width: _screenWidth * 0.6159,
               height: _screenHeight * 0.115,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(

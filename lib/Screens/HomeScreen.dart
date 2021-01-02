@@ -96,13 +96,19 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Center(
-                child: Text(
-                  'A CONFLUENCE OF ECSTACIES',
-                  style: TextStyle(
-                    fontSize: _screenHeight * 0.02754,
-                    fontWeight: FontWeight.w900,
-                    foreground: Paint()..shader = linearGradientTitle,
+              Padding(
+                padding:
+                    EdgeInsets.fromLTRB(_screenWidth * 0.054, 0.0, 0.0, 0.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'A CONFLUENCE OF ECSTACIES',
+                    style: TextStyle(
+                      fontSize: _screenHeight * 0.02754,
+                      fontWeight: FontWeight.w900,
+                      foreground: Paint()..shader = linearGradientTitle,
+                    ),
+                    textAlign: TextAlign.left,
                   ),
                 ),
               ),
@@ -321,7 +327,11 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: _screenHeight * 0.0359,
+                // height: 30,
+              ),
             ],
           ),
         ),
