@@ -5,6 +5,7 @@ import 'Screens/HomeScreen.dart';
 import 'package:provider/provider.dart';
 import './Providers/SponsorsProvider.dart';
 import './Screens/SponsorsScreen.dart';
+import './Screens/ContactUsSceeen.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         home: HomeScreen(),
         routes: {
           SponsorsScreen.routeName: (ctx) => SponsorsScreen(),
+          ContactUsScreen.routeName: (ctx) => ContactUsScreen(),
         },
       ),
     );

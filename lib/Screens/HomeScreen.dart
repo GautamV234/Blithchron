@@ -4,6 +4,7 @@ import '../Model/HomeScreenModel.dart';
 import 'package:provider/provider.dart';
 import '../Providers/EventsProvider.dart';
 import '../Screens/SponsorsScreen.dart';
+import '../Screens/ContactUsSceeen.dart';
 
 class HomeScreen extends StatelessWidget {
   // change the colors to match the gradients in the text
@@ -52,7 +53,7 @@ class HomeScreen extends StatelessWidget {
       {
         'name': 'Contact Us',
         'color': [Color(0xff3ee4ab), Color(0xff07e19d), Color(0xff03beab)],
-        'route': 'None',
+        'route': ContactUsScreen.routeName,
       },
     ];
 
