@@ -11,22 +11,50 @@ class SponsorItem extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          ClipRRect(
-            child: Image.asset(
-              sponsorUrl,
-              height: 20,
+    //responsive media query
+    final data = MediaQuery.of(context);
+    // print(data.size);
 
-              /// change the value correspondingly
+    double _screenHeight;
+    double _screenWidth;
+
+    if (data.orientation == Orientation.portrait) {
+      _screenHeight = data.size.height;
+      _screenWidth = data.size.width;
+    } else {
+      _screenHeight = data.size.width;
+      _screenWidth = data.size.height;
+    }
+    /////////////////////////
+
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.fromLTRB(
+            _screenWidth * 0.06366, 0, _screenWidth * 0.06366, 0),
+        // padding: EdgeInsets.fromLTRB(25.0, 0, 25.0, 0),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10.0),
+              child: Image.asset(
+                sponsorUrl,
+                height: _screenHeight * 0.08983,
+                // height: 75,
+                /// change the value correspondingly
+              ),
             ),
-          ),
-          Text(
-            sponsorTitle,
-            style: TextStyle(color: Colors.white),
-          ),
-        ],
+            SizedBox(
+              height: _screenHeight * 0.02395,
+              // height: 20.0
+            ),
+            Text(
+              sponsorTitle,
+              style:
+                  TextStyle(color: Colors.white, fontWeight: FontWeight.w100),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
     );
   }
