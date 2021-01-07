@@ -5,7 +5,7 @@ import 'Screens/HomeScreen.dart';
 import 'package:provider/provider.dart';
 import './Providers/SponsorsProvider.dart';
 import './Screens/SponsorsScreen.dart';
-import './Screens/ContactUsSceeen.dart';
+import './Screens/ContactUsScreen.dart';
 
 void main() {
   runApp(MyApp());
