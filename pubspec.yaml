@@ -64,13 +64,17 @@ flutter:
     - assets/BrewHouseLogo.png
     - assets/CanaraBankLogo.png
     - assets/CapitalDentalLogo.PNG
-    - assets/DTAGGBlackLogo.png # White daalna padega
+    - assets/DTAGGBlackLogo.png
+    - assets/email_logo_green.png
+    - assets/facebook_logo_yellow.png
     - assets/Garvi_Logo.jpg
     - assets/Garvi.png
     - assets/GVFL.jpg
     - assets/GIL_Logo.png
     - assets/grand-mercure.jpeg
     - assets/IciciBankLogo.png
+    - assets/insta_logo_yellow.png
+    - assets/insta_logo_yellow2.png    
     - assets/ITC_Logo.jpg
     - assets/JawedHabibLogo.png
     - assets/JK_Logo.jpg
@@ -89,10 +93,13 @@ flutter:
     - assets/TinderName_Logo.png
     # - assets/TinderSign_Logo.png
     - assets/TownScript_Logo.png
+    - assets/twitter_logo_yellow.png
     - assets/UnionBank_Logo.png
     - assets/Vivo_Logo.png
+    - assets/website_logo_green.png
     - assets/WhiteHeavenEntBlackLogo.jpg
     # - assets/WhiteHeavenEntWhiteLogo.jpg
+    - assets/youtube_logo_yellow.png
     # - assets/Zebronics_BnW_Logo.png
     - assets/ZebronicsLogo.jpg
 

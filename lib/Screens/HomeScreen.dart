@@ -4,7 +4,7 @@ import '../Model/HomeScreenModel.dart';
 import 'package:provider/provider.dart';
 import '../Providers/EventsProvider.dart';
 import '../Screens/SponsorsScreen.dart';
-import '../Screens/ContactUsSceeen.dart';
+import '../Screens/ContactUsScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   // change the colors to match the gradients in the text
