@@ -5,7 +5,7 @@ import '../Model/SponsorModel.dart';
 import '../Widgets/SponsorItem.dart';
 
 class SponsorsScreen extends StatelessWidget {
-  @override
+  // @override
   static const routeName = '\SponsorsScreen';
   Widget build(BuildContext context) {
     final sponsorsDataProvider = Provider.of<SponsorDataProvider>(context);

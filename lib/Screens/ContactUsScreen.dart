@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactUsScreen extends StatelessWidget {
-  @override
+  // @override
   static const routeName = '\ContactUsScreen';
-  String instaUrl = 'https://www.instagram.com/blithchron_iitgn/';
-  String facebookUrl = 'https://www.facebook.com/Blithchron';
-  String youTubeUrl = 'https://www.youtube.com/user/IITGnBlithchron';
-  String twitterUrl = 'https://twitter.com/blithchroniitgn?lang=en';
-  String websiteUrl = 'https://blithchron.iitgn.ac.in';
-  String email = 'blithchron@iitgn.ac.in';
+  final String instaUrl = 'https://www.instagram.com/blithchron_iitgn/';
+  final String facebookUrl = 'https://www.facebook.com/Blithchron';
+  final String youTubeUrl = 'https://www.youtube.com/user/IITGnBlithchron';
+  final String twitterUrl = 'https://twitter.com/blithchroniitgn?lang=en';
+  final String websiteUrl = 'https://blithchron.iitgn.ac.in';
+  final String email = 'blithchron@iitgn.ac.in';
 
   final Shader linearGradient = LinearGradient(
     colors: <Color>[
