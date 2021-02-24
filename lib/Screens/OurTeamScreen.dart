@@ -86,6 +86,7 @@ class OurTeamScreen extends StatelessWidget {
       _screenHeight = data.size.width;
       _screenWidth = data.size.height;
     }
+
     return Scaffold(
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
@@ -97,21 +98,21 @@ class OurTeamScreen extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 20, // Change
+                  height: _screenHeight * 0.0239, // Change
                 ),
                 Text(
                   'Our Team',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 32, // Change
+                    fontSize: _screenHeight * 0.0383, // Change
                   ),
                 ),
                 SizedBox(
-                  height: 40, // Change
+                  height: _screenHeight * 0.0479, // Change
                 ),
                 SafeArea(
                   child: Container(
-                    height: 300, // Change
+                    height: _screenHeight * 0.3593, // Change
                     width: _screenWidth * 0.9, // Change
                     alignment: Alignment.centerLeft,
                     child: Row(
@@ -119,15 +120,15 @@ class OurTeamScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding:
-                              EdgeInsets.fromLTRB(16.0, 0, 16.0, 0), // Change
+                          padding: EdgeInsets.fromLTRB(_screenWidth * 0.0407, 0,
+                              _screenWidth * 0.0407, 0), // Change
                           child: Container(
-                            width: 40,
+                            width: _screenWidth * 0.10185,
                             alignment: Alignment.centerLeft,
                             child: Text(
                               'C\nO\nR\nE\nS',
                               style: TextStyle(
-                                fontSize: 36,
+                                fontSize: _screenHeight * 0.0431,
                                 fontFamily: 'ProximaNova',
                                 foreground: Paint()
                                   ..style = PaintingStyle.stroke
@@ -140,18 +141,20 @@ class OurTeamScreen extends StatelessWidget {
                         ),
                         Container(
                           // height: 400, // Change
-                          width: 275, // Change
+                          width: _screenWidth * 0.70028, // Change
                           child: GridView.builder(
                             physics: new NeverScrollableScrollPhysics(),
                             gridDelegate:
                                 SliverGridDelegateWithMaxCrossAxisExtent(
                               // maxCrossAxisExtent: _screenWidth * 0.5092,
-                              maxCrossAxisExtent: 225, // Change
+                              maxCrossAxisExtent:
+                                  _screenWidth * 0.5729, // Change
                               childAspectRatio: 1,
                               // crossAxisSpacing: _screenWidth * 0.0127,
                               // mainAxisSpacing: _screenHeight * 0.00958,
-                              crossAxisSpacing: 20, // Change
-                              mainAxisSpacing: 20,
+                              crossAxisSpacing:
+                                  _screenWidth * 0.05092, // Change
+                              mainAxisSpacing: _screenHeight * 0.02395,
                             ),
                             itemCount: coreList.length,
                             itemBuilder: (ctx, i) => OurTeamItem(
@@ -166,11 +169,11 @@ class OurTeamScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: _screenHeight * 0.0359,
                 ),
                 SafeArea(
                   child: Container(
-                    height: 580,
+                    height: _screenHeight * 0.6946,
                     width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(
@@ -178,14 +181,15 @@ class OurTeamScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+                          padding: EdgeInsets.fromLTRB(_screenWidth * 0.0407, 0,
+                              _screenWidth * 0.0407, 0),
                           child: Container(
-                            width: 40,
+                            width: _screenWidth * 0.10185,
                             alignment: Alignment.centerLeft,
                             child: Text(
                               'C\nO\nO\nR\nD\nI\nN\nA\nT\nO\nR\nS',
                               style: TextStyle(
-                                fontSize: 36,
+                                fontSize: _screenHeight * 0.04311,
                                 fontFamily: 'ProximaNova',
                                 foreground: Paint()
                                   ..style = PaintingStyle.stroke
@@ -198,18 +202,20 @@ class OurTeamScreen extends StatelessWidget {
                         ),
                         Container(
                           // height: 400, // Change
-                          width: 275, // Change
+                          width: _screenWidth * 0.70028, // Change
                           child: GridView.builder(
                             physics: new NeverScrollableScrollPhysics(),
                             gridDelegate:
                                 SliverGridDelegateWithMaxCrossAxisExtent(
                               // maxCrossAxisExtent: _screenWidth * 0.5092,
-                              maxCrossAxisExtent: 225, // Change
+                              maxCrossAxisExtent:
+                                  _screenWidth * 0.57295, // Change
                               childAspectRatio: 1,
                               // crossAxisSpacing: _screenWidth * 0.0127,
                               // mainAxisSpacing: _screenHeight * 0.00958,
-                              crossAxisSpacing: 20,
-                              mainAxisSpacing: 20,
+                              crossAxisSpacing:
+                                  _screenWidth * 0.05092, // Change
+                              mainAxisSpacing: _screenHeight * 0.02395,
                             ),
                             itemCount: coordinatorsList.length,
                             itemBuilder: (ctx, i) => OurTeamItem(
@@ -224,7 +230,7 @@ class OurTeamScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: _screenHeight * 0.0239,
                 ),
               ],
             ),

@@ -6,6 +6,8 @@ import './Providers/SponsorsProvider.dart';
 import './Screens/SponsorsScreen.dart';
 import './Screens/ContactUsScreen.dart';
 import 'Screens/OurTeamScreen.dart';
+import 'Screens/EventsScreen.dart';
+import 'package:Blith1/Providers/EventsScreenProvider.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: SponsorDataProvider(),
         ),
+        ChangeNotifierProvider.value(value: EventsProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -36,6 +39,7 @@ class MyApp extends StatelessWidget {
           SponsorsScreen.routeName: (ctx) => SponsorsScreen(),
           ContactUsScreen.routeName: (ctx) => ContactUsScreen(),
           OurTeamScreen.routeName: (ctx) => OurTeamScreen(),
+          EventsScreen.routeName: (ctx) => EventsScreen(),
         },
       ),
     );
