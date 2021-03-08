@@ -7,6 +7,7 @@ import '../Screens/SponsorsScreen.dart';
 import '../Screens/ContactUsScreen.dart';
 import 'OurTeamScreen.dart';
 import 'package:Blith1/Screens/EventsScreen.dart';
+import '../Screens/CampusAdvisorScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   // change the colors to match the gradients in the text
@@ -45,7 +46,7 @@ class HomeScreen extends StatelessWidget {
       {
         'name': 'CA',
         'color': [Color(0xff5ea8fe), Color(0xff3e93fe), Color(0xff347def)],
-        'route': 'None',
+        'route': CampusAdvisorScreen.routeName,
       },
       {
         'name': 'Our Team',
