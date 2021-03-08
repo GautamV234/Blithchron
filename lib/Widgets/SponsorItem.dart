@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SponsorItem extends StatelessWidget {
-  String sponsorUrl;
-  String sponsorName;
-  String sponsorTitle;
+  final String sponsorUrl;
+  final String sponsorName;
+  final String sponsorTitle;
   SponsorItem({
     @required this.sponsorName,
     @required this.sponsorTitle,

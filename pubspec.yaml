@@ -45,7 +45,18 @@ flutter:
     - family: Raleway
       fonts:
         - asset: fonts/Raleway-Bold.ttf
-
+    - family: ProximaNova
+      fonts:
+        - asset: fonts/Proxima-Nova-Black.otf
+    - family: IntroInline
+      fonts:
+        - asset: fonts/Intro-Inline.otf
+    - family: OstrichSansInline
+      fonts:
+        - asset: fonts/OstrichSansInline-Regular.otf        
+    - family: GlaschuInline
+      fonts:
+        - asset: fonts/Glaschu-Inline.otf        
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -102,6 +113,7 @@ flutter:
     - assets/youtube_logo_yellow.png
     # - assets/Zebronics_BnW_Logo.png
     - assets/ZebronicsLogo.jpg
+    - assets/sample-bitmoji.png
 
   #   - images/a_dot_ham.jpeg
 

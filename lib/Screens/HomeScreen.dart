@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import '../Providers/EventsProvider.dart';
 import '../Screens/SponsorsScreen.dart';
 import '../Screens/ContactUsScreen.dart';
+import 'OurTeamScreen.dart';
+import 'package:Blith1/Screens/EventsScreen.dart';
 
 class HomeScreen extends StatelessWidget {
   // change the colors to match the gradients in the text
@@ -33,7 +35,7 @@ class HomeScreen extends StatelessWidget {
       {
         'name': 'Events',
         'color': [Color(0xff9a68f8), Color(0xff8a48fd), Color(0xff7320fe)],
-        'route': 'None',
+        'route': EventsScreen.routeName,
       },
       {
         'name': 'Sponsors',
@@ -48,7 +50,7 @@ class HomeScreen extends StatelessWidget {
       {
         'name': 'Our Team',
         'color': [Color(0xff27d1e6), Color(0xff1dc9de), Color(0xff12b7cc)],
-        'route': 'None',
+        'route': OurTeamScreen.routeName,
       },
       {
         'name': 'Contact Us',
