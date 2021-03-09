@@ -34,8 +34,9 @@ class OurTeamItem extends StatelessWidget {
             _screenWidth * 0.00509,
             _screenHeight * 0.00239),
         child: Container(
-          // height: 40, // Unable to set the size of item from here
-          // width: 20,
+          height: _screenHeight *
+              0.0479, // Unable to set the size of item from here
+          width: _screenWidth * 0.0509,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(
               Radius.circular(15.0),

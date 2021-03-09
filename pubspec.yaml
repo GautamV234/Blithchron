@@ -25,6 +25,9 @@ dependencies:
     sdk: flutter
   provider: ^4.3.2+2
   url_launcher: ^5.2.5
+  vs_scrollbar: ^0.1.2
+  # draggable_scrollbar: ^0.0.4
+
 
 
   # The following adds the Cupertino Icons font to your application.

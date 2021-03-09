@@ -1,4 +1,5 @@
 import 'package:Blith1/Widgets/HomeScreenItem.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../Model/HomeScreenModel.dart';
 import 'package:provider/provider.dart';
@@ -9,6 +10,9 @@ import 'OurTeamScreen.dart';
 import 'package:Blith1/Screens/EventsScreen.dart';
 import '../Screens/CampusAdvisorScreen.dart';
 import '../Widgets/MyDrawer.dart';
+import 'package:Blith1/Screens/DevPage.dart';
+import 'package:vs_scrollbar/vs_scrollbar.dart';
+// import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '\homescreen';
@@ -24,6 +28,8 @@ class HomeScreen extends StatelessWidget {
   ).createShader(
     Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
   );
+
+  ScrollController _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +67,11 @@ class HomeScreen extends StatelessWidget {
         'color': [Color(0xff3ee4ab), Color(0xff07e19d), Color(0xff03beab)],
         'route': ContactUsScreen.routeName,
       },
+      {
+        'name': 'Dev Page',
+        'color': [Color(0xff3ee4ab), Color(0xff07e19d), Color(0xff03beab)],
+        'route': DevPage.routeName,
+      }
     ];
 
     //responsive media query
@@ -247,92 +258,128 @@ class HomeScreen extends StatelessWidget {
                                       EdgeInsets.all(_screenWidth * 0.0203),
                                   // padding: const EdgeInsets.all(8.0),
                                   child: Container(
-                                    height: _screenHeight * 0.1198,
+                                    height: _screenHeight * 0.1398,
                                     // height: 100,
-                                    child: ListView.builder(
+                                    child: VsScrollbar(
+                                      // controller: _scrollController,
+                                      // isAlwaysShown: true,
+                                      // radius: Radius.circular(30),
+                                      // thickness: 6.5,
+
+                                      controller: _scrollController,
                                       scrollDirection: Axis.horizontal,
-                                      itemCount: bottomScrollingList.length,
-                                      itemBuilder: (ctx, i) {
-                                        return InkWell(
-                                          onTap: () {
-                                            if (bottomScrollingList[i]
-                                                    ['route'] !=
-                                                'None') {
-                                              Navigator.pushNamed(
-                                                context,
-                                                bottomScrollingList[i]['route'],
-                                              );
-                                            }
-                                          },
-                                          child: Padding(
-                                            padding: EdgeInsets.fromLTRB(
-                                                _screenWidth * 0.005,
-                                                _screenWidth * 0.005,
-                                                _screenWidth * 0.025,
-                                                _screenWidth * 0.005),
-                                            // padding: const EdgeInsets.all(2.0),
-                                            child: Container(
-                                              width: _screenWidth * 0.2546,
-                                              // width: 100,
-                                              decoration: BoxDecoration(
-                                                // color: Color(0x77000000),
-                                                borderRadius: BorderRadius.all(
-                                                  Radius.circular(10.0),
-                                                ),
-                                                boxShadow: <BoxShadow>[
-                                                  new BoxShadow(
-                                                    color: Color(0x55000000),
-                                                    blurRadius: 5,
-                                                    offset: new Offset(4, 4),
-                                                  ),
-                                                ],
-                                              ),
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.all(
-                                                      Radius.circular(10.0),
-                                                    ),
-                                                    gradient: LinearGradient(
-                                                      colors:
-                                                          bottomScrollingList[i]
-                                                              ['color'],
-                                                    )),
-                                                child: Center(
-                                                  child: Column(
-                                                    children: [
-                                                      SizedBox(
-                                                        height: _screenHeight *
-                                                            0.02198,
-                                                        // height: 10,
+                                      allowDrag: true,
+                                      color: Colors.grey[800],
+                                      radius: 20,
+                                      thickness: 6,
+                                      isAlwaysShown: true,
+                                      // scrollbarFadeDuration:
+                                      //     Duration(milliseconds: 0),
+                                      // scrollbarTimeToFade:
+                                      //     Duration(milliseconds: 0),
+                                      child: ListView.builder(
+                                        controller: _scrollController,
+                                        scrollDirection: Axis.horizontal,
+                                        itemCount: bottomScrollingList.length,
+                                        itemBuilder: (ctx, i) {
+                                          return Column(
+                                            children: [
+                                              InkWell(
+                                                onTap: () {
+                                                  if (bottomScrollingList[i]
+                                                          ['route'] !=
+                                                      'None') {
+                                                    Navigator.pushNamed(
+                                                      context,
+                                                      bottomScrollingList[i]
+                                                          ['route'],
+                                                    );
+                                                  }
+                                                },
+                                                child: Padding(
+                                                  padding: EdgeInsets.fromLTRB(
+                                                      _screenWidth * 0.005,
+                                                      _screenWidth * 0.005,
+                                                      _screenWidth * 0.025,
+                                                      _screenWidth * 0.005),
+                                                  // padding: const EdgeInsets.all(2.0),
+                                                  child: Container(
+                                                    width:
+                                                        _screenWidth * 0.2546,
+                                                    // width: 100,
+                                                    decoration: BoxDecoration(
+                                                      // color: Color(0x77000000),
+                                                      borderRadius:
+                                                          BorderRadius.all(
+                                                        Radius.circular(10.0),
                                                       ),
-                                                      Text(
-                                                        bottomScrollingList[i]
-                                                            ['name'],
-                                                        style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontWeight:
-                                                              FontWeight.bold,
+                                                      boxShadow: <BoxShadow>[
+                                                        new BoxShadow(
+                                                          color:
+                                                              Color(0x55000000),
+                                                          blurRadius: 5,
+                                                          offset:
+                                                              new Offset(4, 4),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    child: Container(
+                                                      height: 89.0,
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                            Radius.circular(
+                                                                10.0),
+                                                          ),
+                                                          gradient:
+                                                              LinearGradient(
+                                                            colors:
+                                                                bottomScrollingList[
+                                                                    i]['color'],
+                                                          )),
+                                                      child: Center(
+                                                        child: Column(
+                                                          children: [
+                                                            SizedBox(
+                                                              height:
+                                                                  _screenHeight *
+                                                                      0.02198,
+                                                              // height: 10,
+                                                            ),
+                                                            Text(
+                                                              bottomScrollingList[
+                                                                  i]['name'],
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                              ),
+                                                            ),
+                                                            SizedBox(
+                                                              height:
+                                                                  _screenHeight *
+                                                                      0.01198,
+                                                              // height: 10,
+                                                            ),
+                                                            Icon(
+                                                              Icons
+                                                                  .arrow_forward_sharp,
+                                                              color:
+                                                                  Colors.white,
+                                                            )
+                                                          ],
                                                         ),
                                                       ),
-                                                      SizedBox(
-                                                        height: _screenHeight *
-                                                            0.01198,
-                                                        // height: 10,
-                                                      ),
-                                                      Icon(
-                                                        Icons
-                                                            .arrow_forward_sharp,
-                                                        color: Colors.white,
-                                                      )
-                                                    ],
+                                                    ),
                                                   ),
                                                 ),
                                               ),
-                                            ),
-                                          ),
-                                        );
-                                      },
+                                            ],
+                                          );
+                                        },
+                                      ),
                                     ),
                                   ),
                                 )
