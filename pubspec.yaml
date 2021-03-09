@@ -133,7 +133,13 @@ flutter:
     - assets/thumbnails/thumbnail_Reverb.png
     - assets/thumbnails/thumbnail_Skirmish.png
     - assets/thumbnails/thumbnail_Unkahi.png
-    # - assets/thumbnails/thumbnail_BlithPD.png
+    - assets/thumbnails/thumbnail_BlithPD.jpg
+    - assets/social/youtube_white.png
+    - assets/social/insta_white.png
+    - assets/social/website_white.png
+    - assets/social/email_white.png
+    - assets/social/twitter_white.png
+    - assets/social/facebook_white.png
 
   #   - images/a_dot_ham.jpeg
 

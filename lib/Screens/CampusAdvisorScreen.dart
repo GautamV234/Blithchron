@@ -20,21 +20,25 @@ final String incentives =
 
 1. Official Merchandise
 2. Vouchers
-3. Customizable bag badges, and more. Moreover, you would also be given the certificate for representing Blithchron as the campus ambassador of your college. ''';
+3. Customizable bag badges, and more.
+
+Moreover, you would also be given the certificate for representing Blithchron as the campus ambassador of your college. ''';
 
 class CampusAdvisorScreen extends StatelessWidget {
   static const routeName = '\CampusAdvisorScreen';
 
   final Shader linearGradient = LinearGradient(
     colors: <Color>[
-      Colors.lightBlue,
-      Colors.blue,
-      Colors.purple,
-      Colors.red,
+      Color(0xff64d2ff),
+      Color(0xff0a84ff),
+      Color(0xff5e5ce6),
+      Color(0xffbf5af2),
+      Color(0xffff375f),
     ],
   ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
+    Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
   );
+
   final Shadow dropShadow2 = new Shadow(
     blurRadius: 5,
     color: Color(0x55000000),
@@ -104,6 +108,7 @@ class CampusAdvisorScreen extends StatelessWidget {
                   _screenWidth * 0.05, 0.0, 0.0, _screenHeight * 0.02),
               child: Text(
                 "BECOME A CAMPUS AMBASSADOR TODAY!",
+                textAlign: TextAlign.left,
                 style: TextStyle(
                   foreground: Paint()..shader = linearGradient,
                   fontSize: _screenHeight * 0.021,

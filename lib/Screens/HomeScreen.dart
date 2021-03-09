@@ -13,10 +13,11 @@ class HomeScreen extends StatelessWidget {
   // change the colors to match the gradients in the text
   final Shader linearGradientTitle = LinearGradient(
     colors: <Color>[
-      Colors.lightBlue,
-      Colors.blue,
-      Colors.purple,
-      Colors.red,
+      Color(0xff64d2ff),
+      Color(0xff0a84ff),
+      Color(0xff5e5ce6),
+      Color(0xffbf5af2),
+      Color(0xffff375f),
     ],
   ).createShader(
     Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
@@ -85,8 +86,8 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding:
-                    EdgeInsets.fromLTRB(_screenWidth * 0.05, 0.0, 0.0, 0.0),
+                padding: EdgeInsets.fromLTRB(
+                    _screenWidth * 0.05, _screenHeight * 0.05, 0.0, 0.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -312,6 +313,7 @@ class HomeScreen extends StatelessWidget {
                                                       Icon(
                                                         Icons
                                                             .arrow_forward_sharp,
+                                                        color: Colors.white,
                                                       )
                                                     ],
                                                   ),

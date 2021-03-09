@@ -55,9 +55,9 @@ class EventsProvider with ChangeNotifier {
     ),
     EventsModel(
       eventName: 'BlithPD',
-      // eventImage: 'assets/thumbnails/thumbnail_BlithPD.png',
-      eventImage: 'None',
-      eventRegister: 'None',
+      eventImage: 'assets/thumbnails/thumbnail_BlithPD.jpg',
+      eventRegister:
+          'https://docs.google.com/forms/d/e/1FAIpQLSc3EUywf9Det2CJxoH07bDRNeVV8MaGetWGc2eo-wyMasBJEA/viewform',
       eventRuleBook: 'None',
     ),
   ];

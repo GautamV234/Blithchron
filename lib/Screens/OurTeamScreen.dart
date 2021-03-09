@@ -4,8 +4,19 @@ import '../Widgets/OurTeamItem.dart';
 class OurTeamScreen extends StatelessWidget {
   // @override
   static const routeName = '\OurTeamScreen';
+  final Shader linearGradient = LinearGradient(
+    colors: <Color>[
+      Color(0xff64d2ff),
+      Color(0xff0a84ff),
+      Color(0xff5e5ce6),
+      Color(0xffbf5af2),
+      Color(0xffff375f),
+    ],
+  ).createShader(
+    Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
+  );
+
   final List coreList = [
-    /// ADD LOGO KA JPG DETAILS UNDER LOGO FROM HRUSHTI
     {
       'name': 'Ashwani Rai',
       'department': 'EVENTS',
@@ -97,13 +108,13 @@ class OurTeamScreen extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: _screenHeight * 0.0239,
+                  height: _screenHeight * 0.0289,
                 ),
                 Text(
                   'Our Team',
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: _screenHeight * 0.0383,
+                    fontSize: _screenHeight * 0.0479,
+                    foreground: Paint()..shader = linearGradient,
                   ),
                 ),
                 SizedBox(
@@ -132,7 +143,7 @@ class OurTeamScreen extends StatelessWidget {
                                 foreground: Paint()
                                   ..style = PaintingStyle.stroke
                                   ..strokeWidth = 1
-                                  ..color = Colors.yellow, // To be changed
+                                  ..color = Color(0xff0a84ff), // To be changed
                               ),
                               textAlign: TextAlign.center,
                             ),
@@ -190,7 +201,7 @@ class OurTeamScreen extends StatelessWidget {
                                 foreground: Paint()
                                   ..style = PaintingStyle.stroke
                                   ..strokeWidth = 1
-                                  ..color = Colors.redAccent, // To be changed
+                                  ..color = Color(0xffff375f), // To be changed
                               ),
                               textAlign: TextAlign.center,
                             ),

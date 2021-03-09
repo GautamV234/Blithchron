@@ -13,13 +13,14 @@ class ContactUsScreen extends StatelessWidget {
 
   final Shader linearGradient = LinearGradient(
     colors: <Color>[
-      Colors.lightBlue,
-      Colors.blue,
-      Colors.purple,
-      Colors.red,
+      Color(0xff64d2ff),
+      Color(0xff0a84ff),
+      Color(0xff5e5ce6),
+      Color(0xffbf5af2),
+      Color(0xffff375f),
     ],
   ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
+    Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
   );
 
   final BoxDecoration shadow1 = BoxDecoration(
@@ -120,9 +121,9 @@ class ContactUsScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding:
-                      EdgeInsets.fromLTRB(0.0, 0.0, _screenWidth * 0.0509, 0.0),
+                      EdgeInsets.fromLTRB(0.0, 0.0, _screenWidth * 0.0309, 0.0),
                   child: IconButton(
-                    icon: new Image.asset("assets/website_logo_green.png"),
+                    icon: new Image.asset("assets/social/website_white.png"),
                     onPressed: () {
                       launchSocialMedia(websiteUrl);
                     },
@@ -135,7 +136,7 @@ class ContactUsScreen extends StatelessWidget {
                   child: Text(
                     'blithchron.iitgn.ac.in',
                     style: TextStyle(
-                      color: Colors.lightGreen,
+                      color: Colors.white,
                       fontSize: _screenHeight * 0.02395,
                     ),
                   ),
@@ -161,7 +162,8 @@ class ContactUsScreen extends StatelessWidget {
                 //   ),
                 // ),
                 IconButton(
-                  icon: new Image.asset("assets/insta_logo_yellow2.png"),
+                  icon: new Image.asset("assets/social/insta_white.png"),
+                  iconSize: _screenWidth * 0.005,
                   onPressed: () {
                     launchSocialMedia(instaUrl);
                   },
@@ -169,9 +171,9 @@ class ContactUsScreen extends StatelessWidget {
                 // twitter
                 Padding(
                   padding: EdgeInsets.fromLTRB(
-                      _screenWidth * 0.0509, 0.0, _screenWidth * 0.02546, 0.0),
+                      _screenWidth * 0.04, 0.0, _screenWidth * 0.02, 0.0),
                   child: IconButton(
-                    icon: new Image.asset("assets/twitter_logo_yellow.png"),
+                    icon: new Image.asset("assets/social/twitter_white.png"),
                     onPressed: () {
                       launchSocialMedia(twitterUrl);
                     },
@@ -180,9 +182,10 @@ class ContactUsScreen extends StatelessWidget {
                 //youtube
                 Padding(
                   padding: EdgeInsets.fromLTRB(
-                      _screenWidth * 0.02546, 0.0, _screenWidth * 0.0509, 0.0),
+                      _screenWidth * 0.02, 0.0, _screenWidth * 0.04, 0.0),
                   child: IconButton(
-                    icon: new Image.asset("assets/youtube_logo_yellow.png"),
+                    icon: new Image.asset("assets/social/youtube_white.png"),
+                    // iconSize: _screenWidth * 0.1,
                     onPressed: () {
                       launchSocialMedia(youTubeUrl);
                     },
@@ -191,7 +194,7 @@ class ContactUsScreen extends StatelessWidget {
 
                 /// facebook
                 IconButton(
-                  icon: new Image.asset("assets/facebook_logo_yellow.png"),
+                  icon: new Image.asset("assets/social/facebook_white.png"),
                   onPressed: () {
                     launchSocialMedia(facebookUrl);
                   },
@@ -219,7 +222,7 @@ class ContactUsScreen extends StatelessWidget {
                   onPressed: () {
                     launchEmail(email);
                   },
-                  icon: new Image.asset('assets/email_logo_green.png'),
+                  icon: new Image.asset('assets/social/email_white.png'),
                 ),
                 SizedBox(
                   width: _screenWidth * 0.05092,
@@ -231,7 +234,7 @@ class ContactUsScreen extends StatelessWidget {
                   child: Text(
                     'blithchron@iitgn.ac.in',
                     style: TextStyle(
-                      color: Colors.lightGreen,
+                      color: Colors.white,
                       fontSize: _screenHeight * 0.02395,
                     ),
                   ),
