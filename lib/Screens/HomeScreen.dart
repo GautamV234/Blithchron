@@ -8,8 +8,10 @@ import '../Screens/ContactUsScreen.dart';
 import 'OurTeamScreen.dart';
 import 'package:Blith1/Screens/EventsScreen.dart';
 import '../Screens/CampusAdvisorScreen.dart';
+import '../Widgets/MyDrawer.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const routeName = '\homescreen';
   // change the colors to match the gradients in the text
   final Shader linearGradientTitle = LinearGradient(
     colors: <Color>[
@@ -77,6 +79,7 @@ class HomeScreen extends StatelessWidget {
     }
 
     return Scaffold(
+      drawer: MyDrawer(),
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
         backgroundColor: Color(0xff1e2025),

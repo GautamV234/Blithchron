@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
         ),
         home: HomeScreen(),
         routes: {
+          HomeScreen.routeName: (ctx) => HomeScreen(),
           SponsorsScreen.routeName: (ctx) => SponsorsScreen(),
           ContactUsScreen.routeName: (ctx) => ContactUsScreen(),
           OurTeamScreen.routeName: (ctx) => OurTeamScreen(),
