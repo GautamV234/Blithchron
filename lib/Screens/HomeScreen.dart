@@ -13,6 +13,7 @@ import '../Widgets/MyDrawer.dart';
 import 'package:Blith1/Screens/DevPage.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
 // import 'package:draggable_scrollbar/draggable_scrollbar.dart';
+import 'package:flutter/services.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '\homescreen';
@@ -33,6 +34,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     final eventsDataProvider = Provider.of<EventsDataProvider>(context);
     final List<HomeScreenModel> eventsList = eventsDataProvider.eventsList;
     final Shadow dropShadow2 = new Shadow(
