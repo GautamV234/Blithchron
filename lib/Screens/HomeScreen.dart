@@ -172,14 +172,21 @@ class HomeScreen extends StatelessWidget {
                             itemCount: eventsList.length,
                             itemBuilder: (ctx, i) {
                               HomeScreenModel currentEvent = eventsList[i];
-                              return HomeScreenItem(
-                                dateDay: currentEvent.dateDay,
-                                dateSuffix: currentEvent.dateSuffix,
-                                dateMonth: currentEvent.dateMonth,
-                                eventName: currentEvent.eventName,
-                                eventDescription: currentEvent.eventDescription,
-                                routeName: currentEvent.routeName,
-                                colorOfCard: currentEvent.color,
+                              return InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, currentEvent.routeName);
+                                },
+                                child: HomeScreenItem(
+                                  dateDay: currentEvent.dateDay,
+                                  dateSuffix: currentEvent.dateSuffix,
+                                  dateMonth: currentEvent.dateMonth,
+                                  eventName: currentEvent.eventName,
+                                  eventDescription:
+                                      currentEvent.eventDescription,
+                                  routeName: currentEvent.routeName,
+                                  colorOfCard: currentEvent.color,
+                                ),
                               );
                             },
                           ),
