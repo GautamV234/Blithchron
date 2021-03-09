@@ -11,13 +11,14 @@ class EventsScreen extends StatelessWidget {
 
   final Shader linearGradient = LinearGradient(
     colors: <Color>[
-      Colors.lightBlue,
-      Colors.blue,
-      Colors.purple,
-      Colors.red,
+      Color(0xff64d2ff),
+      Color(0xff0a84ff),
+      Color(0xff5e5ce6),
+      Color(0xffbf5af2),
+      Color(0xffff375f),
     ],
   ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
+    Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
   );
 
   Widget build(BuildContext context) {

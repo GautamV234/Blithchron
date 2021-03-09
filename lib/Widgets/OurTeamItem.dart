@@ -40,6 +40,13 @@ class OurTeamItem extends StatelessWidget {
             borderRadius: BorderRadius.all(
               Radius.circular(15.0),
             ),
+            boxShadow: <BoxShadow>[
+              new BoxShadow(
+                color: Colors.black,
+                blurRadius: 5.0,
+                offset: new Offset(3.0, 3.0),
+              ),
+            ],
             color: Color(0xff26292e),
           ),
           child: Column(

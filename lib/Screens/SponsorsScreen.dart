@@ -10,7 +10,17 @@ class SponsorsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final sponsorsDataProvider = Provider.of<SponsorDataProvider>(context);
     final List<SponsorModel> sponsorsList = sponsorsDataProvider.sponsorsList;
-
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
+    );
     //responsive media query
     final data = MediaQuery.of(context);
     // print(data.size);
@@ -49,27 +59,14 @@ class SponsorsScreen extends StatelessWidget {
                     _screenWidth * 0.02546,
                     _screenHeight * 0.01197),
                 // padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(15.0),
-                  ),
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xff9a68f8),
-                      Color(0xff8a48fd),
-                      Color(0xff7320fe)
-                    ],
-                  ),
-                ),
+
                 child: Center(
                   child: Text(
                     'Sponsors',
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: _screenHeight * 0.0467,
-                        // fontSize: 39,
-                        fontWeight: FontWeight.w100),
-                    textAlign: TextAlign.center,
+                      fontSize: _screenHeight * 0.0479,
+                      foreground: Paint()..shader = linearGradient,
+                    ),
                   ),
                 ),
               ),
