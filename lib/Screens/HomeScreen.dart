@@ -10,19 +10,6 @@ import 'package:Blith1/Screens/EventsScreen.dart';
 import '../Screens/CampusAdvisorScreen.dart';
 
 class HomeScreen extends StatelessWidget {
-  // change the colors to match the gradients in the text
-  final Shader linearGradientTitle = LinearGradient(
-    colors: <Color>[
-      Color(0xff64d2ff),
-      Color(0xff0a84ff),
-      Color(0xff5e5ce6),
-      Color(0xffbf5af2),
-      Color(0xffff375f),
-    ],
-  ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
-  );
-
   @override
   Widget build(BuildContext context) {
     final eventsDataProvider = Provider.of<EventsDataProvider>(context);
@@ -75,6 +62,18 @@ class HomeScreen extends StatelessWidget {
       _screenHeight = data.size.width;
       _screenWidth = data.size.height;
     }
+
+    final Shader linearGradientTitle = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
+    );
 
     return Scaffold(
       backgroundColor: Color(0xff1e2025),
@@ -162,8 +161,31 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ),
                         ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(
+                              _screenHeight * 0.0095, 0, 0, 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                    _screenWidth * 0.03, 0, 0, 0),
+                                child: Text(
+                                  'Register by',
+                                  style: TextStyle(
+                                      shadows: [
+                                        dropShadow2,
+                                      ],
+                                      color: Colors.white,
+                                      fontSize: _screenHeight * 0.0155,
+                                      fontWeight: FontWeight.w900),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                         Container(
-                          height: _screenHeight * 0.68,
+                          height: _screenHeight * 0.98,
                           child: ListView.builder(
                             physics: NeverScrollableScrollPhysics(),
                             itemCount: eventsList.length,

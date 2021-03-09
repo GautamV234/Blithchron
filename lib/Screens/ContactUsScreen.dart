@@ -96,7 +96,7 @@ class ContactUsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xff1e2025),
       ),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -442,9 +442,9 @@ class ContactUsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // SizedBox(
-                //   height: 20,
-                // ),
+                SizedBox(
+                  height: 20,
+                ),
               ],
             )
           ],
