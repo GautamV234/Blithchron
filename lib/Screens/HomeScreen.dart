@@ -95,6 +95,7 @@ class HomeScreen extends StatelessWidget {
                       fontSize: _screenHeight * 0.075,
                       fontWeight: FontWeight.w900,
                       foreground: Paint()..shader = linearGradientTitle,
+                      // shadows:
                     ),
                     textAlign: TextAlign.left,
                   ),

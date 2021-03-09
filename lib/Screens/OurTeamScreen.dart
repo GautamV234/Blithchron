@@ -9,66 +9,65 @@ class OurTeamScreen extends StatelessWidget {
     {
       'name': 'Ashwani Rai',
       'department': 'EVENTS',
-      'logo': 'assets/sample-bitmoji.png',
+      'logo': 'assets/bitmoji/ashwani.png',
     },
     {
       'name': 'Eshika Pathak',
       'department': 'DESIGN',
-      'logo': 'assets/sample-bitmoji.png',
+      'logo': 'assets/bitmoji/eshika.png',
     },
     {
       'name': 'Rushik Desai',
       'department': 'MARKETING',
-      'logo': 'assets/sample-bitmoji.png',
+      'logo': 'assets/bitmoji/rushik.png',
     },
     {
       'name': 'Isha Bayad',
       'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'logo': 'assets/bitmoji/isha.png',
     },
   ];
 
-  //// add the details of the coordinators in the exact Mujhe Pata nai hai kon hai sorry
   final List coordinatorsList = [
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Anushka Niti',
+      'department': 'DESIGN',
+      'logo': 'assets/bitmoji/anushka.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Rishitha Bikkumalla',
+      'department': 'MARKETING',
+      'logo': 'assets/bitmoji/rishitha.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Ishan Prayagi',
+      'department': 'MARKETING',
+      'logo': 'assets/bitmoji/ishan.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Pratham Panchal',
+      'department': 'MARKETING',
+      'logo': 'assets/bitmoji/pratham.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Juhi Parikh',
+      'department': 'EVENTS',
+      'logo': 'assets/bitmoji/juhi.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Abhiram Geddam',
+      'department': 'EVENTS',
+      'logo': 'assets/bitmoji/abhiram.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Adarsh Golait',
+      'department': 'EVENTS',
+      'logo': 'assets/bitmoji/adarsh.png',
     },
     {
-      'name': 'Isha Bayad',
+      'name': 'Dhvani Shah',
       'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'logo': 'assets/bitmoji/dhvani.png',
     },
   ];
 
@@ -98,30 +97,30 @@ class OurTeamScreen extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: _screenHeight * 0.0239, // Change
+                  height: _screenHeight * 0.0239,
                 ),
                 Text(
                   'Our Team',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: _screenHeight * 0.0383, // Change
+                    fontSize: _screenHeight * 0.0383,
                   ),
                 ),
                 SizedBox(
-                  height: _screenHeight * 0.0479, // Change
+                  height: _screenHeight * 0.0479,
                 ),
                 SafeArea(
                   child: Container(
-                    height: _screenHeight * 0.3593, // Change
-                    width: _screenWidth * 0.9, // Change
+                    height: _screenHeight * 0.3593,
+                    width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(_screenWidth * 0.0407, 0,
-                              _screenWidth * 0.0407, 0), // Change
+                          padding: EdgeInsets.fromLTRB(_screenWidth * 0.0207, 0,
+                              _screenWidth * 0.0207, 0),
                           child: Container(
                             width: _screenWidth * 0.10185,
                             alignment: Alignment.centerLeft,
@@ -140,20 +139,17 @@ class OurTeamScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          // height: 400, // Change
-                          width: _screenWidth * 0.70028, // Change
+                          width: _screenWidth * 0.75028,
                           child: GridView.builder(
                             physics: new NeverScrollableScrollPhysics(),
                             gridDelegate:
                                 SliverGridDelegateWithMaxCrossAxisExtent(
                               // maxCrossAxisExtent: _screenWidth * 0.5092,
-                              maxCrossAxisExtent:
-                                  _screenWidth * 0.5729, // Change
+                              maxCrossAxisExtent: _screenWidth * 0.5729,
                               childAspectRatio: 1,
                               // crossAxisSpacing: _screenWidth * 0.0127,
                               // mainAxisSpacing: _screenHeight * 0.00958,
-                              crossAxisSpacing:
-                                  _screenWidth * 0.05092, // Change
+                              crossAxisSpacing: _screenWidth * 0.05092,
                               mainAxisSpacing: _screenHeight * 0.02395,
                             ),
                             itemCount: coreList.length,
@@ -169,11 +165,11 @@ class OurTeamScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: _screenHeight * 0.0359,
+                  height: _screenHeight * 0.0559,
                 ),
                 SafeArea(
                   child: Container(
-                    height: _screenHeight * 0.6946,
+                    height: _screenHeight * 0.7446,
                     width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(
@@ -181,8 +177,8 @@ class OurTeamScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(_screenWidth * 0.0407, 0,
-                              _screenWidth * 0.0407, 0),
+                          padding: EdgeInsets.fromLTRB(_screenWidth * 0.0207, 0,
+                              _screenWidth * 0.0207, 0),
                           child: Container(
                             width: _screenWidth * 0.10185,
                             alignment: Alignment.centerLeft,
@@ -201,20 +197,17 @@ class OurTeamScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          // height: 400, // Change
-                          width: _screenWidth * 0.70028, // Change
+                          width: _screenWidth * 0.75028,
                           child: GridView.builder(
                             physics: new NeverScrollableScrollPhysics(),
                             gridDelegate:
                                 SliverGridDelegateWithMaxCrossAxisExtent(
                               // maxCrossAxisExtent: _screenWidth * 0.5092,
-                              maxCrossAxisExtent:
-                                  _screenWidth * 0.57295, // Change
+                              maxCrossAxisExtent: _screenWidth * 0.57295,
                               childAspectRatio: 1,
                               // crossAxisSpacing: _screenWidth * 0.0127,
                               // mainAxisSpacing: _screenHeight * 0.00958,
-                              crossAxisSpacing:
-                                  _screenWidth * 0.05092, // Change
+                              crossAxisSpacing: _screenWidth * 0.05092,
                               mainAxisSpacing: _screenHeight * 0.02395,
                             ),
                             itemCount: coordinatorsList.length,

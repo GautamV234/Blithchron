@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class EventsItem extends StatelessWidget {
   final String eventName;
@@ -11,6 +12,19 @@ class EventsItem extends StatelessWidget {
     @required this.eventRegister,
     @required this.eventImage,
   });
+
+  Future<void> launchSocialMedia(String url) async {
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     //responsive media query
@@ -33,18 +47,19 @@ class EventsItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          height: _screenHeight * 0.26949,
-          width: _screenWidth * 0.5729,
+          // height: _screenHeight * 0.26949,
+          // width: _screenWidth * 0.5129,
+          height: _screenHeight * 0.3415,
+          width: _screenWidth * 0.65,
           decoration: BoxDecoration(
-            color: Colors.grey.shade800,
-            borderRadius: BorderRadius.all(
-              Radius.circular(15.0),
-            ),
-            // image: DecorationImage(
-            //   fit: BoxFit.cover,
-            //   image: AssetImage(this.eventImage), //Event Image to be added
-            // )
-          ),
+              color: Colors.grey.shade800,
+              borderRadius: BorderRadius.all(
+                Radius.circular(15.0),
+              ),
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage(this.eventImage), //Event Image to be added
+              )),
         ),
         SizedBox(height: _screenHeight * 0.014372),
         Text(
@@ -65,7 +80,9 @@ class EventsItem extends StatelessWidget {
                   BoxDecoration(border: Border.all(color: Colors.yellow[700])),
               transform: Matrix4.skewX(-0.4),
               child: InkWell(
-                onTap: () {}, //RULE BOOK LINK
+                onTap: () {
+                  launchSocialMedia(this.eventRuleBook);
+                }, //RULE BOOK LINK
                 child: Center(
                   child: Transform(
                     transform: Matrix4.skewX(0.4),
@@ -88,7 +105,9 @@ class EventsItem extends StatelessWidget {
                   BoxDecoration(border: Border.all(color: Colors.yellow[700])),
               transform: Matrix4.skewX(-0.4),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  launchSocialMedia(this.eventRegister);
+                },
                 child: Center(
                   child: Transform(
                     transform: Matrix4.skewX(0.4),

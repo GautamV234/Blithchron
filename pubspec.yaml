@@ -114,6 +114,26 @@ flutter:
     # - assets/Zebronics_BnW_Logo.png
     - assets/ZebronicsLogo.jpg
     - assets/sample-bitmoji.png
+    - assets/bitmoji/abhiram.png
+    - assets/bitmoji/adarsh.png
+    - assets/bitmoji/anushka.png
+    - assets/bitmoji/ashwani.png
+    - assets/bitmoji/dhvani.png
+    - assets/bitmoji/eshika.png
+    - assets/bitmoji/isha.png
+    - assets/bitmoji/ishan.png
+    - assets/bitmoji/juhi.png
+    - assets/bitmoji/pratham.png
+    - assets/bitmoji/rishitha.png
+    - assets/bitmoji/rushik.png
+    - assets/thumbnails/thumbnail_ExaggeratAD.png
+    - assets/thumbnails/thumbnail_LenzLaw.jpg
+    - assets/thumbnails/thumbnail_Mezkala.png
+    - assets/thumbnails/thumbnail_Quizzitch.png
+    - assets/thumbnails/thumbnail_Reverb.png
+    - assets/thumbnails/thumbnail_Skirmish.png
+    - assets/thumbnails/thumbnail_Unkahi.png
+    # - assets/thumbnails/thumbnail_BlithPD.png
 
   #   - images/a_dot_ham.jpeg
 

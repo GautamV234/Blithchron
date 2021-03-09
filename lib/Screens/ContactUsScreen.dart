@@ -22,6 +22,20 @@ class ContactUsScreen extends StatelessWidget {
     Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
   );
 
+  final BoxDecoration shadow1 = BoxDecoration(
+    color: Colors.grey.shade800,
+    borderRadius: BorderRadius.all(
+      Radius.circular(15.0),
+    ),
+    boxShadow: <BoxShadow>[
+      new BoxShadow(
+        color: Colors.black54,
+        blurRadius: 5.0,
+        offset: new Offset(3.0, 3.0),
+      ),
+    ],
+  );
+
   Future<void> launchSocialMedia(String url) async {
     if (await canLaunch(url)) {
       await launch(
@@ -184,9 +198,10 @@ class ContactUsScreen extends StatelessWidget {
                 ),
               ],
             ),
+
             Padding(
               padding:
-                  EdgeInsets.fromLTRB(0.0, _screenHeight * 0.01197, 0.0, 0.0),
+                  EdgeInsets.fromLTRB(0.0, _screenHeight * 0.02197, 0.0, 0.0),
               child: Text('Contact Us',
                   style: TextStyle(
                     fontSize: _screenHeight * 0.0479,
@@ -194,7 +209,7 @@ class ContactUsScreen extends StatelessWidget {
                   )),
             ),
             SizedBox(
-              height: _screenHeight * 0.01197,
+              height: _screenHeight * 0.00197,
             ),
             // message icon get from some package
             Row(
@@ -223,29 +238,33 @@ class ContactUsScreen extends StatelessWidget {
                 ),
               ],
             ),
-            //  we could create a widget but Lousy coding here repeating template four times feel free to change
-            SizedBox(height: _screenHeight * 0.0479),
+
+            // Contacts of Cores below
+            SizedBox(height: _screenHeight * 0.0229),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  // Add height and width acc to image size
-                  height: _screenHeight * 0.05988,
+                  // height: _screenHeight * 0.05988,
+                  height: _screenHeight * 0.09988,
                   width: _screenWidth * 0.50929,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade800,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15.0),
-                    ),
-                  ),
+                  decoration: shadow1,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      ClipRRect(child: null),
-
-                      /// add images once they come,
+                      Container(
+                        padding:
+                            EdgeInsets.fromLTRB(0, 0, _screenWidth * 0.01, 0),
+                        height: _screenHeight * 0.07988,
+                        child: ClipRRect(
+                          child: Image.asset(
+                            'assets/bitmoji/ashwani.png',
+                          ),
+                        ),
+                      ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             'Ashwani Rai',
@@ -276,23 +295,25 @@ class ContactUsScreen extends StatelessWidget {
                   height: _screenHeight * 0.023954,
                 ),
                 Container(
-                  // Add height and width acc to image size
-                  height: _screenHeight * 0.059887,
+                  height: _screenHeight * 0.09988,
                   width: _screenWidth * 0.509294,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade800,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15.0),
-                    ),
-                  ),
+                  decoration: shadow1,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      ClipRRect(child: null),
-
-                      /// add images once they come,
+                      Container(
+                        padding:
+                            EdgeInsets.fromLTRB(0, 0, _screenWidth * 0.01, 0),
+                        height: _screenHeight * 0.07988,
+                        child: ClipRRect(
+                          child: Image.asset(
+                            'assets/bitmoji/eshika.png',
+                          ),
+                        ),
+                      ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             'Eshika Pathak',
@@ -323,23 +344,25 @@ class ContactUsScreen extends StatelessWidget {
                   height: _screenHeight * 0.023954,
                 ),
                 Container(
-                  // Add height and width acc to image size
-                  height: _screenHeight * 0.059887,
+                  height: _screenHeight * 0.09988,
                   width: _screenWidth * 0.509294,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade800,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15.0),
-                    ),
-                  ),
+                  decoration: shadow1,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      ClipRRect(child: null),
-
-                      /// add images once they come,
+                      Container(
+                        padding:
+                            EdgeInsets.fromLTRB(0, 0, _screenWidth * 0.01, 0),
+                        height: _screenHeight * 0.07988,
+                        child: ClipRRect(
+                          child: Image.asset(
+                            'assets/bitmoji/isha.png',
+                          ),
+                        ),
+                      ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             'Isha Bayad',
@@ -371,22 +394,25 @@ class ContactUsScreen extends StatelessWidget {
                 ),
                 Container(
                   // Add height and width acc to image size
-                  height: _screenHeight * 0.059887,
+                  height: _screenHeight * 0.09988,
                   width: _screenWidth * 0.509294,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade800,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15.0),
-                    ),
-                  ),
+                  decoration: shadow1,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      ClipRRect(child: null),
-
-                      /// add images once they come,
+                      Container(
+                        padding:
+                            EdgeInsets.fromLTRB(0, 0, _screenWidth * 0.01, 0),
+                        height: _screenHeight * 0.07988,
+                        child: ClipRRect(
+                          child: Image.asset(
+                            'assets/bitmoji/rushik.png',
+                          ),
+                        ),
+                      ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             'Rushik Desai',
