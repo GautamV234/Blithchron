@@ -9,18 +9,6 @@ class EventsScreen extends StatelessWidget {
 
   static const routeName = '\EventsScreen';
 
-  final Shader linearGradient = LinearGradient(
-    colors: <Color>[
-      Color(0xff64d2ff),
-      Color(0xff0a84ff),
-      Color(0xff5e5ce6),
-      Color(0xffbf5af2),
-      Color(0xffff375f),
-    ],
-  ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
-  );
-
   Widget build(BuildContext context) {
     final eventsProvider = Provider.of<EventsProvider>(context);
     final List<EventsModel> eventsList = eventsProvider.eventsList;
@@ -39,6 +27,18 @@ class EventsScreen extends StatelessWidget {
       _screenHeight = data.size.width;
       _screenWidth = data.size.height;
     }
+
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
+    );
 
     return Scaffold(
       backgroundColor: Color(0xff1e2025),

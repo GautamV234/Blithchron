@@ -27,18 +27,6 @@ Moreover, you would also be given the certificate for representing Blithchron as
 class CampusAdvisorScreen extends StatelessWidget {
   static const routeName = '\CampusAdvisorScreen';
 
-  final Shader linearGradient = LinearGradient(
-    colors: <Color>[
-      Color(0xff64d2ff),
-      Color(0xff0a84ff),
-      Color(0xff5e5ce6),
-      Color(0xffbf5af2),
-      Color(0xffff375f),
-    ],
-  ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
-  );
-
   final Shadow dropShadow2 = new Shadow(
     blurRadius: 5,
     color: Color(0x55000000),
@@ -74,6 +62,31 @@ class CampusAdvisorScreen extends StatelessWidget {
       _screenWidth = data.size.height;
     }
 
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
+    );
+
+    Future<void> launchPhoneCall(int number) async {
+      var url = "tel:${number.toString()}";
+      if (await canLaunch(url)) {
+        await launch(
+          url,
+          // forceSafariVC: false,
+          // forceWebView: false,
+        );
+      } else {
+        throw 'Could not call $number';
+      }
+    }
+
     return Scaffold(
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
@@ -95,7 +108,7 @@ class CampusAdvisorScreen extends StatelessWidget {
                   style: TextStyle(
                     foreground: Paint()..shader = linearGradient,
                     fontSize: _screenHeight * 0.065,
-                    height: _screenHeight * 0.001,
+                    height: _screenHeight * 0.0015, // Problem
                   ),
                 ),
               ),
@@ -106,12 +119,15 @@ class CampusAdvisorScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.fromLTRB(
                   _screenWidth * 0.05, 0.0, 0.0, _screenHeight * 0.02),
-              child: Text(
-                "BECOME A CAMPUS AMBASSADOR TODAY!",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  foreground: Paint()..shader = linearGradient,
-                  fontSize: _screenHeight * 0.021,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "BECOME A CAMPUS AMBASSADOR TODAY!",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    foreground: Paint()..shader = linearGradient,
+                    fontSize: _screenHeight * 0.021,
+                  ),
                 ),
               ),
             ),
@@ -242,8 +258,8 @@ class CampusAdvisorScreen extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: _screenHeight * 0.015,
-                          height: _screenHeight * 0.0015,
+                          fontSize: _screenHeight * 0.018,
+                          height: _screenHeight * 0.0018,
                         ),
                       ),
                     ),
@@ -300,8 +316,8 @@ class CampusAdvisorScreen extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: _screenHeight * 0.015,
-                          height: _screenHeight * 0.0015,
+                          fontSize: _screenHeight * 0.018,
+                          height: _screenHeight * 0.0018,
                         ),
                       ),
                     ),
@@ -350,6 +366,9 @@ class CampusAdvisorScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(_screenWidth * 0.05, 0,
                           _screenWidth * 0.05, _screenWidth * 0.05),
@@ -358,8 +377,8 @@ class CampusAdvisorScreen extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: _screenHeight * 0.015,
-                          height: _screenHeight * 0.0015,
+                          fontSize: _screenHeight * 0.018,
+                          height: _screenHeight * 0.0018,
                         ),
                       ),
                     ),
@@ -408,17 +427,58 @@ class CampusAdvisorScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(_screenWidth * 0.05, 0,
                           _screenWidth * 0.05, _screenWidth * 0.05),
-                      child: Text(
-                        'Lorem ipsum',
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: _screenHeight * 0.015,
-                          height: _screenHeight * 0.0015,
-                        ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.phone,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                                _screenWidth * 0.035, 0, 0, 0),
+                            child: InkWell(
+                              onTap: () {
+                                launchPhoneCall(9390209737);
+                              },
+                              child: Text(
+                                "Rishitha: +91 93902 09737",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: _screenHeight * 0.025,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(_screenWidth * 0.05, 0,
+                          _screenWidth * 0.05, _screenWidth * 0.05),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.mail_outline,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                                _screenWidth * 0.035, 0, 0, 0),
+                            child: Text(
+                              "blithchron@iitgn.ac.in",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: _screenHeight * 0.025,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(

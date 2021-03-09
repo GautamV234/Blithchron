@@ -12,23 +12,11 @@ import '../Screens/CampusAdvisorScreen.dart';
 import '../Widgets/MyDrawer.dart';
 import 'package:Blith1/Screens/DevPage.dart';
 import 'package:vs_scrollbar/vs_scrollbar.dart';
-// import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:flutter/services.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '\homescreen';
   // change the colors to match the gradients in the text
-  final Shader linearGradientTitle = LinearGradient(
-    colors: <Color>[
-      Color(0xff64d2ff),
-      Color(0xff0a84ff),
-      Color(0xff5e5ce6),
-      Color(0xffbf5af2),
-      Color(0xffff375f),
-    ],
-  ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
-  );
 
   ScrollController _scrollController = ScrollController();
 
@@ -79,6 +67,18 @@ class HomeScreen extends StatelessWidget {
         'route': DevPage.routeName,
       }
     ];
+
+    final Shader linearGradientTitle = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
+    );
 
     //responsive media query
     final data = MediaQuery.of(context);
@@ -182,8 +182,31 @@ class HomeScreen extends StatelessWidget {
                             ],
                           ),
                         ),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(
+                              _screenHeight * 0.0095, 0, 0, 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(
+                                    _screenWidth * 0.03, 0, 0, 0),
+                                child: Text(
+                                  'Register by',
+                                  style: TextStyle(
+                                      shadows: [
+                                        dropShadow2,
+                                      ],
+                                      color: Colors.white,
+                                      fontSize: _screenHeight * 0.0155,
+                                      fontWeight: FontWeight.w900),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                         Container(
-                          height: _screenHeight * 0.68,
+                          height: _screenHeight * 0.98,
                           child: ListView.builder(
                             physics: NeverScrollableScrollPhysics(),
                             itemCount: eventsList.length,

@@ -10,17 +10,7 @@ class SponsorsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final sponsorsDataProvider = Provider.of<SponsorDataProvider>(context);
     final List<SponsorModel> sponsorsList = sponsorsDataProvider.sponsorsList;
-    final Shader linearGradient = LinearGradient(
-      colors: <Color>[
-        Color(0xff64d2ff),
-        Color(0xff0a84ff),
-        Color(0xff5e5ce6),
-        Color(0xffbf5af2),
-        Color(0xffff375f),
-      ],
-    ).createShader(
-      Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
-    );
+
     //responsive media query
     final data = MediaQuery.of(context);
     // print(data.size);
@@ -36,6 +26,18 @@ class SponsorsScreen extends StatelessWidget {
       _screenWidth = data.size.height;
     }
     /////////////////////////
+
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
+    );
 
     return Scaffold(
       backgroundColor: Color(0xff1e2025),

@@ -171,7 +171,7 @@ class HomeScreenItem extends StatelessWidget {
                             fontFamily: 'Raleway',
                             color: Colors.white,
                             fontWeight: FontWeight.w900,
-                            fontSize: _screenHeight * 0.02,
+                            fontSize: _screenHeight * 0.025,
                             // fontSize: 20,
                           ),
                         ),
@@ -187,7 +187,7 @@ class HomeScreenItem extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Raleway',
                             color: Colors.white,
-                            fontSize: _screenHeight * 0.013,
+                            fontSize: _screenHeight * 0.018,
                             // fontSize: 12,
                           ),
                         ),
