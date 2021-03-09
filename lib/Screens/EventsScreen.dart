@@ -64,19 +64,21 @@ class EventsScreen extends StatelessWidget {
             SizedBox(
               height: _screenHeight * 0.02395,
             ),
-            Container(
-              height: _screenHeight * 0.75458,
-              child: ListView.builder(
-                // physics: NeverScrollableScrollPhysics(),
-                itemCount: eventsList.length,
-                itemBuilder: (ctx, i) {
-                  EventsModel currentEvent = eventsList[i];
-                  return EventsItem(
-                      eventName: currentEvent.eventName,
-                      eventRuleBook: currentEvent.eventRuleBook,
-                      eventRegister: currentEvent.eventRegister,
-                      eventImage: currentEvent.eventImage);
-                },
+            Expanded(
+              child: Container(
+                height: _screenHeight * 0.75458,
+                child: ListView.builder(
+                  // physics: NeverScrollableScrollPhysics(),
+                  itemCount: eventsList.length,
+                  itemBuilder: (ctx, i) {
+                    EventsModel currentEvent = eventsList[i];
+                    return EventsItem(
+                        eventName: currentEvent.eventName,
+                        eventRuleBook: currentEvent.eventRuleBook,
+                        eventRegister: currentEvent.eventRegister,
+                        eventImage: currentEvent.eventImage);
+                  },
+                ),
               ),
             ),
           ],
