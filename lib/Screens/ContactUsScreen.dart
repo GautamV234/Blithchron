@@ -11,17 +11,6 @@ class ContactUsScreen extends StatelessWidget {
   final String websiteUrl = 'https://blithchron.iitgn.ac.in';
   final String email = 'blithchron@iitgn.ac.in';
 
-  final Shader linearGradient = LinearGradient(
-    colors: <Color>[
-      Color(0xff64d2ff),
-      Color(0xff0a84ff),
-      Color(0xff5e5ce6),
-      Color(0xffbf5af2),
-      Color(0xffff375f),
-    ],
-  ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
-  );
 
   final BoxDecoration shadow1 = BoxDecoration(
     color: Colors.grey.shade800,
@@ -90,6 +79,18 @@ class ContactUsScreen extends StatelessWidget {
       _screenHeight = data.size.width;
       _screenWidth = data.size.height;
     }
+
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
+    );
 
     return Scaffold(
       backgroundColor: Color(0xff1e2025),

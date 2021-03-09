@@ -62,23 +62,11 @@ class HomeScreen extends StatelessWidget {
         'route': ContactUsScreen.routeName,
       },
       {
-        'name': 'Dev Page',
-        'color': [Color(0xff3ee4ab), Color(0xff07e19d), Color(0xff03beab)],
+        'name': 'Developers',
+        'color': [Color(0xff5ea8fe), Color(0xff3e93fe), Color(0xff347def)],
         'route': DevPage.routeName,
       }
     ];
-
-    final Shader linearGradientTitle = LinearGradient(
-      colors: <Color>[
-        Color(0xff64d2ff),
-        Color(0xff0a84ff),
-        Color(0xff5e5ce6),
-        Color(0xffbf5af2),
-        Color(0xffff375f),
-      ],
-    ).createShader(
-      Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
-    );
 
     //responsive media query
     final data = MediaQuery.of(context);
@@ -94,6 +82,18 @@ class HomeScreen extends StatelessWidget {
       _screenHeight = data.size.width;
       _screenWidth = data.size.height;
     }
+
+    final Shader linearGradientTitle = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.75, 70.0),
+    );
 
     return Scaffold(
       drawer: MyDrawer(),
@@ -116,7 +116,9 @@ class HomeScreen extends StatelessWidget {
                       fontSize: _screenHeight * 0.075,
                       fontWeight: FontWeight.w900,
                       foreground: Paint()..shader = linearGradientTitle,
-                      // shadows:
+                      shadows: [
+                        dropShadow2,
+                      ],
                     ),
                     textAlign: TextAlign.left,
                   ),
@@ -133,6 +135,9 @@ class HomeScreen extends StatelessWidget {
                       fontSize: _screenHeight * 0.02754,
                       fontWeight: FontWeight.w900,
                       foreground: Paint()..shader = linearGradientTitle,
+                      shadows: [
+                        dropShadow2,
+                      ],
                     ),
                     textAlign: TextAlign.left,
                   ),

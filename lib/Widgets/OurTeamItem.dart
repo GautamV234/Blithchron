@@ -69,7 +69,7 @@ class OurTeamItem extends StatelessWidget {
                   name,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: _screenHeight * 0.01676, // Change
+                    fontSize: _screenHeight * 0.01576, // Change
                   ),
                 ),
               ),

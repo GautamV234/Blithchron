@@ -4,26 +4,14 @@ import 'package:url_launcher/url_launcher.dart';
 class DevPage extends StatelessWidget {
   static const routeName = '\DevPage';
 
-  final String emailG = 'blithchron@iitgn.ac.in';
-  final String emailS = 'blithchron@iitgn.ac.in';
-  final String emailP = 'blithchron@iitgn.ac.in';
+  final String emailG = 'gautam.pv@iitgn.ac.in';
+  final String emailS = 'saagar.p@iitgn.ac.in';
+  final String emailP = 'gupta.paras@iitgn.ac.in';
   // final String emailR = 'blithchron@iitgn.ac.in';
   final String gitG = 'blithchron@iitgn.ac.in';
   final String gitS = 'blithchron@iitgn.ac.in';
   final String gitP = 'blithchron@iitgn.ac.in';
   // final String gitR = 'blithchron@iitgn.ac.in';
-
-  final Shader linearGradient = LinearGradient(
-    colors: <Color>[
-      Color(0xff64d2ff),
-      Color(0xff0a84ff),
-      Color(0xff5e5ce6),
-      Color(0xffbf5af2),
-      Color(0xffff375f),
-    ],
-  ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
-  );
 
   Future<void> launchEmail(String email) async {
     var url = "mailto:$email";
@@ -54,6 +42,18 @@ class DevPage extends StatelessWidget {
       _screenHeight = data.size.width;
       _screenWidth = data.size.height;
     }
+
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
+    );
 
     return Scaffold(
         backgroundColor: Color(0xff1e2025),
@@ -125,7 +125,7 @@ class DevPage extends StatelessWidget {
                                     height: _screenHeight * 0.10,
                                     child: ClipRRect(
                                       child: Image.asset(
-                                        'assets/bitmoji/ashwani.png',
+                                        'assets/bitmoji/gautam.png',
                                       ),
                                     ),
                                   ),
@@ -165,7 +165,7 @@ class DevPage extends StatelessWidget {
                                       launchEmail(emailG);
                                     },
                                     child: Text(
-                                      'blithchron@iitgn.ac.in',
+                                      emailG,
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: _screenHeight * 0.01895,
@@ -175,33 +175,33 @@ class DevPage extends StatelessWidget {
                                 ],
                               ),
                               // SizedBox(height: _screenHeight * 0.00098),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Transform.scale(
-                                    scale: 0.7,
-                                    child: IconButton(
-                                      onPressed: () {
-                                        launchEmail(emailG);
-                                      },
-                                      icon: Image.asset(
-                                          'assets/social/email_white.png'),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      launchEmail(gitG);
-                                    },
-                                    child: Text(
-                                      'blithchron@iitgn.ac.in',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: _screenHeight * 0.01895,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              // Row(
+                              //   mainAxisAlignment: MainAxisAlignment.center,
+                              //   children: [
+                              //     Transform.scale(
+                              //       scale: 0.7,
+                              //       child: IconButton(
+                              //         onPressed: () {
+                              //           launchEmail(emailG);
+                              //         },
+                              //         icon: Image.asset(
+                              //             'assets/social/email_white.png'),
+                              //       ),
+                              //     ),
+                              //     InkWell(
+                              //       onTap: () {
+                              //         launchEmail(gitG);
+                              //       },
+                              //       child: Text(
+                              //         'blithchron@iitgn.ac.in',
+                              //         style: TextStyle(
+                              //           color: Colors.white,
+                              //           fontSize: _screenHeight * 0.01895,
+                              //         ),
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
                               // SizedBox(height: _screenHeight * 0.0198),
                             ],
                           ),
@@ -249,7 +249,7 @@ class DevPage extends StatelessWidget {
                                     height: _screenHeight * 0.10,
                                     child: ClipRRect(
                                       child: Image.asset(
-                                        'assets/bitmoji/ashwani.png',
+                                        'assets/bitmoji/saagar.png',
                                       ),
                                     ),
                                   ),
@@ -286,10 +286,10 @@ class DevPage extends StatelessWidget {
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      launchEmail(emailG);
+                                      launchEmail(emailS);
                                     },
                                     child: Text(
-                                      'blithchron@iitgn.ac.in',
+                                      emailS,
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: _screenHeight * 0.01895,
@@ -299,33 +299,33 @@ class DevPage extends StatelessWidget {
                                 ],
                               ),
                               // SizedBox(height: _screenHeight * 0.00098),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Transform.scale(
-                                    scale: 0.7,
-                                    child: IconButton(
-                                      onPressed: () {
-                                        launchEmail(emailS);
-                                      },
-                                      icon: Image.asset(
-                                          'assets/social/email_white.png'),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      launchEmail(gitS);
-                                    },
-                                    child: Text(
-                                      'blithchron@iitgn.ac.in',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: _screenHeight * 0.01895,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              // Row(
+                              //   mainAxisAlignment: MainAxisAlignment.center,
+                              //   children: [
+                              //     Transform.scale(
+                              //       scale: 0.7,
+                              //       child: IconButton(
+                              //         onPressed: () {
+                              //           launchEmail(emailS);
+                              //         },
+                              //         icon: Image.asset(
+                              //             'assets/social/email_white.png'),
+                              //       ),
+                              //     ),
+                              //     InkWell(
+                              //       onTap: () {
+                              //         launchEmail(gitS);
+                              //       },
+                              //       child: Text(
+                              //         'blithchron@iitgn.ac.in',
+                              //         style: TextStyle(
+                              //           color: Colors.white,
+                              //           fontSize: _screenHeight * 0.01895,
+                              //         ),
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
                               // SizedBox(height: _screenHeight * 0.0198),
                             ],
                           ),
@@ -373,7 +373,7 @@ class DevPage extends StatelessWidget {
                                     height: _screenHeight * 0.10,
                                     child: ClipRRect(
                                       child: Image.asset(
-                                        'assets/bitmoji/ashwani.png',
+                                        'assets/bitmoji/paras.png',
                                       ),
                                     ),
                                   ),
@@ -402,7 +402,7 @@ class DevPage extends StatelessWidget {
                                     scale: 0.7,
                                     child: IconButton(
                                       onPressed: () {
-                                        launchEmail(emailG);
+                                        launchEmail(emailP);
                                       },
                                       icon: new Image.asset(
                                           'assets/social/email_white.png'),
@@ -413,7 +413,7 @@ class DevPage extends StatelessWidget {
                                       launchEmail(emailP);
                                     },
                                     child: Text(
-                                      'blithchron@iitgn.ac.in',
+                                      emailP,
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: _screenHeight * 0.01895,
@@ -423,33 +423,33 @@ class DevPage extends StatelessWidget {
                                 ],
                               ),
                               // SizedBox(height: _screenHeight * 0.00098),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Transform.scale(
-                                    scale: 0.7,
-                                    child: IconButton(
-                                      onPressed: () {
-                                        launchEmail(emailG);
-                                      },
-                                      icon: Image.asset(
-                                          'assets/social/email_white.png'),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      launchEmail(gitP);
-                                    },
-                                    child: Text(
-                                      'blithchron@iitgn.ac.in',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: _screenHeight * 0.01895,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                              // Row(
+                              //   mainAxisAlignment: MainAxisAlignment.center,
+                              //   children: [
+                              //     Transform.scale(
+                              //       scale: 0.7,
+                              //       child: IconButton(
+                              //         onPressed: () {
+                              //           launchEmail(emailG);
+                              //         },
+                              //         icon: Image.asset(
+                              //             'assets/social/email_white.png'),
+                              //       ),
+                              //     ),
+                              //     InkWell(
+                              //       onTap: () {
+                              //         launchEmail(gitP);
+                              //       },
+                              //       child: Text(
+                              //         'blithchron@iitgn.ac.in',
+                              //         style: TextStyle(
+                              //           color: Colors.white,
+                              //           fontSize: _screenHeight * 0.01895,
+                              //         ),
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
                               // SizedBox(height: _screenHeight * 0.0198),
                             ],
                           ),

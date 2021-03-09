@@ -26,7 +26,6 @@ class SponsorsScreen extends StatelessWidget {
       _screenWidth = data.size.height;
     }
     /////////////////////////
-
     final Shader linearGradient = LinearGradient(
       colors: <Color>[
         Color(0xff64d2ff),
@@ -36,7 +35,7 @@ class SponsorsScreen extends StatelessWidget {
         Color(0xffff375f),
       ],
     ).createShader(
-      Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
     );
 
     return Scaffold(

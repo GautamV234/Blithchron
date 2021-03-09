@@ -95,7 +95,7 @@ class OurTeamScreen extends StatelessWidget {
         Color(0xffff375f),
       ],
     ).createShader(
-      Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
     );
 
     return Scaffold(
@@ -123,7 +123,7 @@ class OurTeamScreen extends StatelessWidget {
                 ),
                 SafeArea(
                   child: Container(
-                    height: _screenHeight * 0.3593,
+                    height: _screenHeight * 0.3793,
                     width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(
@@ -181,7 +181,7 @@ class OurTeamScreen extends StatelessWidget {
                 ),
                 SafeArea(
                   child: Container(
-                    height: _screenHeight * 0.7446,
+                    height: _screenHeight * 0.7746,
                     width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(
