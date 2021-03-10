@@ -11,6 +11,8 @@ class SponsorsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final sponsorsDataProvider = Provider.of<SponsorDataProvider>(context);
     final List<SponsorModel> sponsorsList = sponsorsDataProvider.sponsorsList;
+    final List<SponsorModel> newsponsorsList =
+        sponsorsDataProvider.newsponsorsList;
 
     //responsive media query
     final data = MediaQuery.of(context);
@@ -27,6 +29,7 @@ class SponsorsScreen extends StatelessWidget {
       _screenWidth = data.size.height;
     }
     /////////////////////////
+
     final Shader linearGradient = LinearGradient(
       colors: <Color>[
         Color(0xff64d2ff),
@@ -78,6 +81,46 @@ class SponsorsScreen extends StatelessWidget {
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int i) {
                   return SponsorItem(
+                    sponsorName: newsponsorsList[i].sponsorName,
+                    sponsorTitle: newsponsorsList[i].sponsorTitle,
+                    sponsorUrl: newsponsorsList[i].sponsorUrl,
+                  );
+                },
+                childCount: newsponsorsList.length,
+              ),
+            ),
+            Container(
+              height: _screenHeight * 0.08384,
+              width: _screenWidth * 0.611,
+              padding: EdgeInsets.fromLTRB(
+                  _screenWidth * 0.02546,
+                  _screenHeight * 0.01197,
+                  _screenWidth * 0.02546,
+                  _screenHeight * 0.01197),
+              // padding: EdgeInsets.all(10),
+              child: Center(
+                child: Text(
+                  'Past Sponsors',
+                  style: TextStyle(
+                    fontSize: _screenHeight * 0.0479,
+                    foreground: Paint()..shader = linearGradient,
+                  ),
+                ),
+              ),
+            ),
+            SliverGrid(
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: _screenWidth * 0.5092,
+                // maxCrossAxisExtent: 200,
+                childAspectRatio: 1.2,
+                crossAxisSpacing: _screenWidth * 0.0127,
+                mainAxisSpacing: _screenHeight * 0.00958,
+                // crossAxisSpacing: 5,
+                // mainAxisSpacing: 8.0,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int i) {
+                  return SponsorItem(
                     sponsorName: sponsorsList[i].sponsorName,
                     sponsorTitle: sponsorsList[i].sponsorTitle,
                     sponsorUrl: sponsorsList[i].sponsorUrl,
@@ -85,7 +128,7 @@ class SponsorsScreen extends StatelessWidget {
                 },
                 childCount: sponsorsList.length,
               ),
-            )
+            ),
           ],
         ));
   }

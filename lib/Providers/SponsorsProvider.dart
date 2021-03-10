@@ -2,6 +2,34 @@ import 'package:flutter/material.dart';
 import '../Model/SponsorModel.dart';
 
 class SponsorDataProvider with ChangeNotifier {
+  final List<SponsorModel> _newsponsorsList = [
+    SponsorModel(
+        //1
+        sponsorName: 'Gujarat Tourism',
+        sponsorTitle: 'Title Sponsor',
+        sponsorUrl: 'assets/gujaratTourism.png'),
+    SponsorModel(
+        //2
+        sponsorName: 'ITC',
+        sponsorTitle: 'CSR Sponsor',
+        sponsorUrl: 'assets/ITC.png'),
+    SponsorModel(
+        //3
+        sponsorName: 'GIL',
+        sponsorTitle: 'Information Partner',
+        sponsorUrl: 'assets/GIL_Logo.png'),
+    SponsorModel(
+        //4
+        sponsorName: 'Yocket',
+        sponsorTitle: 'Study Abroad Partner',
+        sponsorUrl: 'assets/yocket.png'),
+    SponsorModel(
+        //5
+        sponsorName: 'Garvi Gurjari',
+        sponsorTitle: 'Handicraft and Handloom Sponsor',
+        sponsorUrl: 'assets/Garvi.png'),
+  ];
+
   final List<SponsorModel> _sponsorsList = [
     SponsorModel(
         //1
@@ -171,5 +199,9 @@ class SponsorDataProvider with ChangeNotifier {
   ];
   List<SponsorModel> get sponsorsList {
     return [..._sponsorsList];
+  }
+
+  List<SponsorModel> get newsponsorsList {
+    return [..._newsponsorsList];
   }
 }
