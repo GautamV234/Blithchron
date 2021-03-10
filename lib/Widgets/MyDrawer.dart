@@ -5,6 +5,7 @@ import '../Screens/ContactUsScreen.dart';
 import '../Screens/EventsScreen.dart';
 import '../Screens/SponsorsScreen.dart';
 import '../Screens/OurTeamScreen.dart';
+import '../Screens/DevPage.dart';
 
 class MyDrawer extends StatelessWidget {
   final List drawerList = [
@@ -37,6 +38,11 @@ class MyDrawer extends StatelessWidget {
       'name': 'Contact Us',
       'color': [Color(0xff3ee4ab), Color(0xff07e19d), Color(0xff03beab)],
       'route': ContactUsScreen.routeName,
+    },
+    {
+      'name': 'Developers',
+      'color': [Color(0xff9a68f8), Color(0xff8a48fd), Color(0xff7320fe)],
+      'route': DevPage.routeName,
     },
   ];
 
