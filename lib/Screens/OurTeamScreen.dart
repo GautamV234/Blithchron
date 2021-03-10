@@ -4,17 +4,6 @@ import '../Widgets/OurTeamItem.dart';
 class OurTeamScreen extends StatelessWidget {
   // @override
   static const routeName = '\OurTeamScreen';
-  final Shader linearGradient = LinearGradient(
-    colors: <Color>[
-      Color(0xff64d2ff),
-      Color(0xff0a84ff),
-      Color(0xff5e5ce6),
-      Color(0xffbf5af2),
-      Color(0xffff375f),
-    ],
-  ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
-  );
 
   final List coreList = [
     {
@@ -97,6 +86,18 @@ class OurTeamScreen extends StatelessWidget {
       _screenWidth = data.size.height;
     }
 
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
+    );
+
     return Scaffold(
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
@@ -122,7 +123,7 @@ class OurTeamScreen extends StatelessWidget {
                 ),
                 SafeArea(
                   child: Container(
-                    height: _screenHeight * 0.3593,
+                    height: _screenHeight * 0.3793,
                     width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(
@@ -180,7 +181,7 @@ class OurTeamScreen extends StatelessWidget {
                 ),
                 SafeArea(
                   child: Container(
-                    height: _screenHeight * 0.7446,
+                    height: _screenHeight * 0.7746,
                     width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(

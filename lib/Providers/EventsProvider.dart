@@ -54,6 +54,26 @@ class EventsDataProvider with ChangeNotifier {
       color: [Color(0xff3ee4ab), Color(0xff07e19d), Color(0xff03beab)],
       routeName: 'None',
     ),
+    HomeScreenModel(
+      eventNum: 6,
+      dateDay: '22',
+      dateSuffix: 'nd',
+      dateMonth: 'MAR',
+      eventName: 'Lenz Law',
+      eventDescription: 'Registeration is live!',
+      color: [Color(0xff5ea8fe), Color(0xff3e93fe), Color(0xff347def)],
+      routeName: 'None',
+    ),
+    HomeScreenModel(
+      eventNum: 7,
+      dateDay: '24',
+      dateSuffix: 'th',
+      dateMonth: 'MAR',
+      eventName: 'Quizzitch',
+      eventDescription: 'Registeration is live!',
+      color: [Color(0xff9a68f8), Color(0xff8a48fd), Color(0xff7320fe)],
+      routeName: 'None',
+    ),
   ];
 
   List<HomeScreenModel> get eventsList {
