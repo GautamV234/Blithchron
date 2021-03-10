@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../Widgets/MyDrawer.dart';
 
 class ContactUsScreen extends StatelessWidget {
   // @override
@@ -10,7 +11,6 @@ class ContactUsScreen extends StatelessWidget {
   final String twitterUrl = 'https://twitter.com/blithchroniitgn?lang=en';
   final String websiteUrl = 'https://blithchron.iitgn.ac.in';
   final String email = 'blithchron@iitgn.ac.in';
-
 
   final BoxDecoration shadow1 = BoxDecoration(
     color: Colors.grey.shade800,
@@ -93,6 +93,7 @@ class ContactUsScreen extends StatelessWidget {
     );
 
     return Scaffold(
+      drawer: MyDrawer(),
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
         backgroundColor: Color(0xff1e2025),

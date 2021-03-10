@@ -220,7 +220,7 @@ class HomeScreen extends StatelessWidget {
                               return InkWell(
                                 onTap: () {
                                   Navigator.pushNamed(
-                                      context, currentEvent.routeName);
+                                      context, EventsScreen.routeName);
                                 },
                                 child: HomeScreenItem(
                                   dateDay: currentEvent.dateDay,
@@ -358,7 +358,8 @@ class HomeScreen extends StatelessWidget {
                                                       ],
                                                     ),
                                                     child: Container(
-                                                      height: 89.0,
+                                                      height: _screenHeight *
+                                                          0.10659,
                                                       decoration: BoxDecoration(
                                                           borderRadius:
                                                               BorderRadius.all(

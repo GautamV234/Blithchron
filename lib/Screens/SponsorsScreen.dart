@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../Providers/SponsorsProvider.dart';
 import '../Model/SponsorModel.dart';
 import '../Widgets/SponsorItem.dart';
+import '../Widgets/MyDrawer.dart';
 
 class SponsorsScreen extends StatelessWidget {
   // @override
@@ -40,6 +41,7 @@ class SponsorsScreen extends StatelessWidget {
     );
 
     return Scaffold(
+        drawer: MyDrawer(),
         backgroundColor: Color(0xff1e2025),
         // appBar: AppBar(
         //   backgroundColor: Color(0xff1e2025),

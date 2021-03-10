@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../Widgets/MyDrawer.dart';
 
 final String aboutTheProgram =
     "Campus Ambassador program is a learning opportunity for every person wanting to learn leadership, teamwork and communication skill. Every year, we appoint CA’s from different colleges who spread the word about the event in their respective organizations. By working with different people outside of peer circle, this program brings a unique opportunity to learn how to work professionally and how to be an effective orator. By enrolling in the program, you would interact with the students of your college directly and become a connecting link between us and them.";
@@ -88,6 +89,7 @@ class CampusAdvisorScreen extends StatelessWidget {
     }
 
     return Scaffold(
+      drawer: MyDrawer(),
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
         backgroundColor: Color(0xff1e2025),

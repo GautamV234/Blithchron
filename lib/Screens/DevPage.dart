@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../Widgets/MyDrawer.dart';
 
 class DevPage extends StatelessWidget {
   static const routeName = '\DevPage';
@@ -56,6 +57,7 @@ class DevPage extends StatelessWidget {
     );
 
     return Scaffold(
+        drawer: MyDrawer(),
         backgroundColor: Color(0xff1e2025),
         appBar: AppBar(
           backgroundColor: Color(0xff1e2025),

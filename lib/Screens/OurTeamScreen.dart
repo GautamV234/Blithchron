@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Widgets/OurTeamItem.dart';
+import '../Widgets/MyDrawer.dart';
 
 class OurTeamScreen extends StatelessWidget {
   // @override
@@ -99,6 +100,7 @@ class OurTeamScreen extends StatelessWidget {
     );
 
     return Scaffold(
+      drawer: MyDrawer(),
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
         backgroundColor: Color(0xff1e2025),

@@ -3,6 +3,7 @@ import 'package:Blith1/Widgets/EventsItem.dart';
 import 'package:provider/provider.dart';
 import 'package:Blith1/Model/EventsModel.dart';
 import 'package:Blith1/Providers/EventsScreenProvider.dart';
+import '../Widgets/MyDrawer.dart';
 
 class EventsScreen extends StatelessWidget {
   // @override
@@ -41,6 +42,7 @@ class EventsScreen extends StatelessWidget {
     );
 
     return Scaffold(
+        drawer: MyDrawer(),
         backgroundColor: Color(0xff1e2025),
         // appBar: AppBar(
         //   backgroundColor: Color(0xff1e2025),

@@ -81,13 +81,13 @@ class MyDrawer extends StatelessWidget {
             /// Not decided whether to keep the Blithchron '21 heading or not,
             /// will confirm in the morning
 
-            // Text(
-            //   "Blithchron'21",
-            //   style: TextStyle(
-            //     foreground: Paint()..shader = linearGradient,
-            //     fontSize: _screenHeight * 0.03,
-            //   ),
-            // ),
+            Text(
+              "Blithchron'21",
+              style: TextStyle(
+                foreground: Paint()..shader = linearGradient,
+                fontSize: _screenHeight * 0.03,
+              ),
+            ),
             Expanded(
               child: SizedBox(
                 height: _screenHeight * 0.5,
