@@ -10,6 +10,7 @@ import 'Screens/EventsScreen.dart';
 import 'package:Blith1/Providers/EventsScreenProvider.dart';
 import './Screens/CampusAdvisorScreen.dart';
 import 'Screens/DevPage.dart';
+import 'Screens/SplashScreens.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
           fontFamily: 'Raleway',
         ),
-        home: HomeScreen(),
+        home: SplashScreen(),
         routes: {
           HomeScreen.routeName: (ctx) => HomeScreen(),
           SponsorsScreen.routeName: (ctx) => SponsorsScreen(),
