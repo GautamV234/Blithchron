@@ -1,43 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../Widgets/MyDrawer.dart';
 
 final String aboutTheProgram =
     "Campus Ambassador program is a learning opportunity for every person wanting to learn leadership, teamwork and communication skill. Every year, we appoint CA’s from different colleges who spread the word about the event in their respective organizations. By working with different people outside of peer circle, this program brings a unique opportunity to learn how to work professionally and how to be an effective orator. By enrolling in the program, you would interact with the students of your college directly and become a connecting link between us and them.";
 
 final String whatWillYouBeDoing =
     '''As the CA you will be carrying out following tasks:
-
 1. Creating awareness about Blithchron ’21 among your college’s student community.
 2. Bringing in participation for various kinds of events from your college.
 3. Increasing the reach of Social Media platforms by sharing the content we put out on various other social media.
 4. Getting more and more downloads of our app on Google Play Store to increase awareness about the event.
-
 This list is not exhaustive and you might be asked to do more as and when
 required. ''';
 
 final String incentives =
     '''Apart from the various skills that you would learn being the CA for the event there are exciting prizes and incentives. Being the top CA can get your prizes worth Rs. 4000 and other exciting incentives like:
-
 1. Official Merchandise
 2. Vouchers
 3. Customizable bag badges, and more.
-
 Moreover, you would also be given the certificate for representing Blithchron as the campus ambassador of your college. ''';
 
 class CampusAdvisorScreen extends StatelessWidget {
   static const routeName = '\CampusAdvisorScreen';
-
-  final Shader linearGradient = LinearGradient(
-    colors: <Color>[
-      Color(0xff64d2ff),
-      Color(0xff0a84ff),
-      Color(0xff5e5ce6),
-      Color(0xffbf5af2),
-      Color(0xffff375f),
-    ],
-  ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 300.0, 70.0),
-  );
 
   final Shadow dropShadow2 = new Shadow(
     blurRadius: 5,
@@ -74,7 +59,33 @@ class CampusAdvisorScreen extends StatelessWidget {
       _screenWidth = data.size.height;
     }
 
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
+    );
+
+    Future<void> launchPhoneCall(int number) async {
+      var url = "tel:${number.toString()}";
+      if (await canLaunch(url)) {
+        await launch(
+          url,
+          // forceSafariVC: false,
+          // forceWebView: false,
+        );
+      } else {
+        throw 'Could not call $number';
+      }
+    }
+
     return Scaffold(
+      drawer: MyDrawer(),
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
         backgroundColor: Color(0xff1e2025),
@@ -95,7 +106,7 @@ class CampusAdvisorScreen extends StatelessWidget {
                   style: TextStyle(
                     foreground: Paint()..shader = linearGradient,
                     fontSize: _screenHeight * 0.065,
-                    height: _screenHeight * 0.001,
+                    height: _screenHeight * 0.0015, // Problem
                   ),
                 ),
               ),
@@ -106,12 +117,15 @@ class CampusAdvisorScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.fromLTRB(
                   _screenWidth * 0.05, 0.0, 0.0, _screenHeight * 0.02),
-              child: Text(
-                "BECOME A CAMPUS AMBASSADOR TODAY!",
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  foreground: Paint()..shader = linearGradient,
-                  fontSize: _screenHeight * 0.021,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "BECOME A CAMPUS AMBASSADOR TODAY!",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    foreground: Paint()..shader = linearGradient,
+                    fontSize: _screenHeight * 0.021,
+                  ),
                 ),
               ),
             ),
@@ -242,8 +256,8 @@ class CampusAdvisorScreen extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: _screenHeight * 0.015,
-                          height: _screenHeight * 0.0015,
+                          fontSize: _screenHeight * 0.018,
+                          height: _screenHeight * 0.0018,
                         ),
                       ),
                     ),
@@ -300,8 +314,8 @@ class CampusAdvisorScreen extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: _screenHeight * 0.015,
-                          height: _screenHeight * 0.0015,
+                          fontSize: _screenHeight * 0.018,
+                          height: _screenHeight * 0.0018,
                         ),
                       ),
                     ),
@@ -350,6 +364,9 @@ class CampusAdvisorScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(_screenWidth * 0.05, 0,
                           _screenWidth * 0.05, _screenWidth * 0.05),
@@ -358,8 +375,8 @@ class CampusAdvisorScreen extends StatelessWidget {
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: _screenHeight * 0.015,
-                          height: _screenHeight * 0.0015,
+                          fontSize: _screenHeight * 0.018,
+                          height: _screenHeight * 0.0018,
                         ),
                       ),
                     ),
@@ -408,17 +425,58 @@ class CampusAdvisorScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(_screenWidth * 0.05, 0,
                           _screenWidth * 0.05, _screenWidth * 0.05),
-                      child: Text(
-                        'Lorem ipsum',
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: _screenHeight * 0.015,
-                          height: _screenHeight * 0.0015,
-                        ),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.phone,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                                _screenWidth * 0.035, 0, 0, 0),
+                            child: InkWell(
+                              onTap: () {
+                                launchPhoneCall(9390209737);
+                              },
+                              child: Text(
+                                "Rishitha: +91 93902 09737",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: _screenHeight * 0.025,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(_screenWidth * 0.05, 0,
+                          _screenWidth * 0.05, _screenWidth * 0.05),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.mail_outline,
+                            color: Colors.white,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                                _screenWidth * 0.035, 0, 0, 0),
+                            child: Text(
+                              "blithchron@iitgn.ac.in",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: _screenHeight * 0.025,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(

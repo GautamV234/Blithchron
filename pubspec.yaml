@@ -25,6 +25,10 @@ dependencies:
     sdk: flutter
   provider: ^4.3.2+2
   url_launcher: ^5.2.5
+  vs_scrollbar: ^0.1.2
+  
+  # draggable_scrollbar: ^0.0.4
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -34,7 +38,19 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.8.0"
   
+  # flutter_launcher_icons: ^0.9.0
+
+# flutter_icons :
+# android : 
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/appLogo.png" 
+  adaptive_icon_background: "0xff26292e"
+  adaptive_icon_foreground: "assets/appLogo.png"      
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -126,6 +142,9 @@ flutter:
     - assets/bitmoji/pratham.png
     - assets/bitmoji/rishitha.png
     - assets/bitmoji/rushik.png
+    - assets/bitmoji/gautam.png
+    - assets/bitmoji/saagar.png
+    - assets/bitmoji/paras.png
     - assets/thumbnails/thumbnail_ExaggeratAD.png
     - assets/thumbnails/thumbnail_LenzLaw.jpg
     - assets/thumbnails/thumbnail_Mezkala.png
@@ -141,6 +160,9 @@ flutter:
     - assets/social/twitter_white.png
     - assets/social/facebook_white.png
 
+
+
+    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

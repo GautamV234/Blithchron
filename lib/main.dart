@@ -9,6 +9,7 @@ import 'Screens/OurTeamScreen.dart';
 import 'Screens/EventsScreen.dart';
 import 'package:Blith1/Providers/EventsScreenProvider.dart';
 import './Screens/CampusAdvisorScreen.dart';
+import 'Screens/DevPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
           OurTeamScreen.routeName: (ctx) => OurTeamScreen(),
           EventsScreen.routeName: (ctx) => EventsScreen(),
           CampusAdvisorScreen.routeName: (ctx) => CampusAdvisorScreen(),
+          DevPage.routeName: (ctx) => DevPage(),
         },
       ),
     );
