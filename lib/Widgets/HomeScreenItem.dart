@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Screens/EventsScreen.dart';
 
 class HomeScreenItem extends StatelessWidget {
   final String dateDay;
@@ -40,12 +41,12 @@ class HomeScreenItem extends StatelessWidget {
       _screenWidth = data.size.height;
     }
     /////////////////////////
-
     return InkWell(
       onTap: () {
-        if (routeName != 'None') {
-          // Navigator.push
-        }
+        // if (routeName != 'None') {
+        //   // Navigator.push
+        // }
+        Navigator.pushNamed(context, EventsScreen.routeName);
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -187,7 +188,7 @@ class HomeScreenItem extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Raleway',
                             color: Colors.white,
-                            fontSize: _screenHeight * 0.013,
+                            fontSize: _screenHeight * 0.015,
                             // fontSize: 12,
                           ),
                         ),
