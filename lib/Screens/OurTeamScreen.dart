@@ -35,7 +35,7 @@ class OurTeamScreen extends StatelessWidget {
       'logo': 'assets/bitmoji/anushka.png',
     },
     {
-      'name': 'Rishitha Bikkumalla',
+      'name': 'Rishitha B.',
       'department': 'MARKETING',
       'logo': 'assets/bitmoji/rishitha.png',
     },
