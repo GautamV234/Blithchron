@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:Blith1/Widgets/EventsItem.dart';
 import 'package:provider/provider.dart';
-import '../Providers/SponsorsProvider.dart';
-import '../Model/SponsorModel.dart';
-import '../Widgets/SponsorItem.dart';
+import 'package:Blith1/Model/EventsModel.dart';
+import 'package:Blith1/Providers/EventsScreenProvider.dart';
 import '../Widgets/MyDrawer.dart';
 
-class SponsorsScreen extends StatelessWidget {
+class EventsScreen extends StatelessWidget {
   // @override
-  static const routeName = '\SponsorsScreen';
+
+  static const routeName = '\EventsScreen';
+
   Widget build(BuildContext context) {
-    final sponsorsDataProvider = Provider.of<SponsorDataProvider>(context);
-    final List<SponsorModel> sponsorsList = sponsorsDataProvider.sponsorsList;
+    final eventsProvider = Provider.of<EventsProvider>(context);
+    final List<EventsModel> eventsList = eventsProvider.eventsList;
 
     //responsive media query
     final data = MediaQuery.of(context);
@@ -26,7 +28,7 @@ class SponsorsScreen extends StatelessWidget {
       _screenHeight = data.size.width;
       _screenWidth = data.size.height;
     }
-    /////////////////////////
+
     final Shader linearGradient = LinearGradient(
       colors: <Color>[
         Color(0xff64d2ff),
@@ -46,7 +48,7 @@ class SponsorsScreen extends StatelessWidget {
         //   backgroundColor: Color(0xff1e2025),
         // ),
         body: CustomScrollView(
-          slivers: <Widget>[
+          slivers: [
             SliverAppBar(
               backgroundColor: Color(0xff1e2025),
               expandedHeight: _screenHeight * 0.1796,
@@ -55,7 +57,7 @@ class SponsorsScreen extends StatelessWidget {
               // snap: true,
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
-                  'Sponsors',
+                  'Events',
                   style: TextStyle(
                     fontSize: _screenHeight * 0.0379,
                     foreground: Paint()..shader = linearGradient,
@@ -65,27 +67,17 @@ class SponsorsScreen extends StatelessWidget {
                 collapseMode: CollapseMode.pin,
               ),
             ),
-            SliverGrid(
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: _screenWidth * 0.5092,
-                // maxCrossAxisExtent: 200,
-                childAspectRatio: 1.2,
-                crossAxisSpacing: _screenWidth * 0.0127,
-                mainAxisSpacing: _screenHeight * 0.00958,
-                // crossAxisSpacing: 5,
-                // mainAxisSpacing: 8.0,
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int i) {
-                  return SponsorItem(
-                    sponsorName: sponsorsList[i].sponsorName,
-                    sponsorTitle: sponsorsList[i].sponsorTitle,
-                    sponsorUrl: sponsorsList[i].sponsorUrl,
-                  );
-                },
-                childCount: sponsorsList.length,
-              ),
-            )
+            SliverList(
+                delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int i) {
+                return EventsItem(
+                    eventName: eventsList[i].eventName,
+                    eventRuleBook: eventsList[i].eventRuleBook,
+                    eventRegister: eventsList[i].eventRegister,
+                    eventImage: eventsList[i].eventImage);
+              },
+              childCount: eventsList.length,
+            ))
           ],
         ));
   }

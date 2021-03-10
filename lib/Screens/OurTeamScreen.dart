@@ -4,71 +4,70 @@ import '../Widgets/OurTeamItem.dart';
 class OurTeamScreen extends StatelessWidget {
   // @override
   static const routeName = '\OurTeamScreen';
+
   final List coreList = [
-    /// ADD LOGO KA JPG DETAILS UNDER LOGO FROM HRUSHTI
     {
       'name': 'Ashwani Rai',
       'department': 'EVENTS',
-      'logo': 'assets/sample-bitmoji.png',
+      'logo': 'assets/bitmoji/ashwani.png',
     },
     {
       'name': 'Eshika Pathak',
       'department': 'DESIGN',
-      'logo': 'assets/sample-bitmoji.png',
+      'logo': 'assets/bitmoji/eshika.png',
     },
     {
       'name': 'Rushik Desai',
       'department': 'MARKETING',
-      'logo': 'assets/sample-bitmoji.png',
+      'logo': 'assets/bitmoji/rushik.png',
     },
     {
       'name': 'Isha Bayad',
       'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'logo': 'assets/bitmoji/isha.png',
     },
   ];
 
-  //// add the details of the coordinators in the exact Mujhe Pata nai hai kon hai sorry
   final List coordinatorsList = [
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Anushka Niti',
+      'department': 'DESIGN',
+      'logo': 'assets/bitmoji/anushka.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Rishitha Bikkumalla',
+      'department': 'MARKETING',
+      'logo': 'assets/bitmoji/rishitha.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Ishan Prayagi',
+      'department': 'MARKETING',
+      'logo': 'assets/bitmoji/ishan.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Pratham Panchal',
+      'department': 'MARKETING',
+      'logo': 'assets/bitmoji/pratham.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Juhi Parikh',
+      'department': 'EVENTS',
+      'logo': 'assets/bitmoji/juhi.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Abhiram Geddam',
+      'department': 'EVENTS',
+      'logo': 'assets/bitmoji/abhiram.png',
     },
     {
-      'name': 'Isha Bayad',
-      'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'name': 'Adarsh Golait',
+      'department': 'EVENTS',
+      'logo': 'assets/bitmoji/adarsh.png',
     },
     {
-      'name': 'Isha Bayad',
+      'name': 'Dhvani Shah',
       'department': 'SPONS',
-      'logo': 'assets/sample-bitmoji.png',
+      'logo': 'assets/bitmoji/dhvani.png',
     },
   ];
 
@@ -86,6 +85,19 @@ class OurTeamScreen extends StatelessWidget {
       _screenHeight = data.size.width;
       _screenWidth = data.size.height;
     }
+
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
+    );
+
     return Scaffold(
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
@@ -97,61 +109,61 @@ class OurTeamScreen extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 20, // Change
+                  height: _screenHeight * 0.0289,
                 ),
                 Text(
                   'Our Team',
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 32, // Change
+                    fontSize: _screenHeight * 0.0479,
+                    foreground: Paint()..shader = linearGradient,
                   ),
                 ),
                 SizedBox(
-                  height: 40, // Change
+                  height: _screenHeight * 0.0579,
                 ),
                 SafeArea(
                   child: Container(
-                    height: 300, // Change
-                    width: _screenWidth * 0.9, // Change
+                    // height: _screenHeight * 0.3793,
+                    height: _screenHeight * 0.4793,
+                    width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding:
-                              EdgeInsets.fromLTRB(16.0, 0, 16.0, 0), // Change
+                          padding: EdgeInsets.fromLTRB(_screenWidth * 0.0207, 0,
+                              _screenWidth * 0.0207, 0),
                           child: Container(
-                            width: 40,
-                            alignment: Alignment.centerLeft,
+                            width: _screenWidth * 0.08,
+                            alignment: Alignment.topCenter,
                             child: Text(
                               'C\nO\nR\nE\nS',
                               style: TextStyle(
-                                fontSize: 36,
+                                fontSize: _screenHeight * 0.0431,
                                 fontFamily: 'ProximaNova',
                                 foreground: Paint()
                                   ..style = PaintingStyle.stroke
                                   ..strokeWidth = 1
-                                  ..color = Colors.yellow, // To be changed
+                                  ..color = Color(0xff0a84ff), // To be changed
                               ),
                               textAlign: TextAlign.center,
                             ),
                           ),
                         ),
                         Container(
-                          // height: 400, // Change
-                          width: 275, // Change
+                          width: _screenWidth * 0.75028,
                           child: GridView.builder(
                             physics: new NeverScrollableScrollPhysics(),
                             gridDelegate:
                                 SliverGridDelegateWithMaxCrossAxisExtent(
                               // maxCrossAxisExtent: _screenWidth * 0.5092,
-                              maxCrossAxisExtent: 225, // Change
+                              maxCrossAxisExtent: _screenWidth * 0.5729,
                               childAspectRatio: 1,
                               // crossAxisSpacing: _screenWidth * 0.0127,
                               // mainAxisSpacing: _screenHeight * 0.00958,
-                              crossAxisSpacing: 20, // Change
-                              mainAxisSpacing: 20,
+                              crossAxisSpacing: _screenWidth * 0.05092,
+                              mainAxisSpacing: _screenHeight * 0.02395,
                             ),
                             itemCount: coreList.length,
                             itemBuilder: (ctx, i) => OurTeamItem(
@@ -166,11 +178,12 @@ class OurTeamScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: _screenHeight * 0.0559,
                 ),
                 SafeArea(
                   child: Container(
-                    height: 580,
+                    // height: _screenHeight * 0.7746,
+                    height: _screenHeight * 0.93,
                     width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(
@@ -178,38 +191,38 @@ class OurTeamScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(16.0, 0, 16.0, 0),
+                          padding: EdgeInsets.fromLTRB(_screenWidth * 0.0207, 0,
+                              _screenWidth * 0.0207, 0),
                           child: Container(
-                            width: 40,
-                            alignment: Alignment.centerLeft,
+                            width: _screenWidth * 0.08,
+                            alignment: Alignment.topCenter,
                             child: Text(
                               'C\nO\nO\nR\nD\nI\nN\nA\nT\nO\nR\nS',
                               style: TextStyle(
-                                fontSize: 36,
+                                fontSize: _screenHeight * 0.04311,
                                 fontFamily: 'ProximaNova',
                                 foreground: Paint()
                                   ..style = PaintingStyle.stroke
                                   ..strokeWidth = 1
-                                  ..color = Colors.redAccent, // To be changed
+                                  ..color = Color(0xffff375f), // To be changed
                               ),
                               textAlign: TextAlign.center,
                             ),
                           ),
                         ),
                         Container(
-                          // height: 400, // Change
-                          width: 275, // Change
+                          width: _screenWidth * 0.75028,
                           child: GridView.builder(
                             physics: new NeverScrollableScrollPhysics(),
                             gridDelegate:
                                 SliverGridDelegateWithMaxCrossAxisExtent(
                               // maxCrossAxisExtent: _screenWidth * 0.5092,
-                              maxCrossAxisExtent: 225, // Change
+                              maxCrossAxisExtent: _screenWidth * 0.57295,
                               childAspectRatio: 1,
                               // crossAxisSpacing: _screenWidth * 0.0127,
                               // mainAxisSpacing: _screenHeight * 0.00958,
-                              crossAxisSpacing: 20,
-                              mainAxisSpacing: 20,
+                              crossAxisSpacing: _screenWidth * 0.05092,
+                              mainAxisSpacing: _screenHeight * 0.02395,
                             ),
                             itemCount: coordinatorsList.length,
                             itemBuilder: (ctx, i) => OurTeamItem(
@@ -224,7 +237,7 @@ class OurTeamScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: _screenHeight * 0.0239,
                 ),
               ],
             ),

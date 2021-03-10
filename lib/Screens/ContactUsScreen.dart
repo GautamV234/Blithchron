@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../Widgets/MyDrawer.dart';
 
 class ContactUsScreen extends StatelessWidget {
   // @override
@@ -11,15 +12,18 @@ class ContactUsScreen extends StatelessWidget {
   final String websiteUrl = 'https://blithchron.iitgn.ac.in';
   final String email = 'blithchron@iitgn.ac.in';
 
-  final Shader linearGradient = LinearGradient(
-    colors: <Color>[
-      Colors.lightBlue,
-      Colors.blue,
-      Colors.purple,
-      Colors.red,
+  final BoxDecoration shadow1 = BoxDecoration(
+    color: Colors.grey.shade800,
+    borderRadius: BorderRadius.all(
+      Radius.circular(15.0),
+    ),
+    boxShadow: <BoxShadow>[
+      new BoxShadow(
+        color: Colors.black54,
+        blurRadius: 5.0,
+        offset: new Offset(3.0, 3.0),
+      ),
     ],
-  ).createShader(
-    Rect.fromLTWH(0.0, 0.0, 350.0, 70.0),
   );
 
   Future<void> launchSocialMedia(String url) async {
@@ -76,349 +80,383 @@ class ContactUsScreen extends StatelessWidget {
       _screenWidth = data.size.height;
     }
 
+    final Shader linearGradient = LinearGradient(
+      colors: <Color>[
+        Color(0xff64d2ff),
+        Color(0xff0a84ff),
+        Color(0xff5e5ce6),
+        Color(0xffbf5af2),
+        Color(0xffff375f),
+      ],
+    ).createShader(
+      Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
+    );
+
     return Scaffold(
+      drawer: MyDrawer(),
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
         backgroundColor: Color(0xff1e2025),
       ),
-      body: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: _screenHeight * 0.01796,
-              // height: 15,
-            ),
-            Padding(
-              padding:
-                  EdgeInsets.fromLTRB(0.0, _screenHeight * 0.01197, 0.0, 0.0),
-              child: Text('Follow Us',
-                  style: TextStyle(
-                    fontSize: _screenHeight * 0.0479,
-                    foreground: Paint()..shader = linearGradient,
-                  )),
-            ),
-            SizedBox(
-              height: _screenHeight * 0.0059887,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding:
-                      EdgeInsets.fromLTRB(0.0, 0.0, _screenWidth * 0.0509, 0.0),
-                  child: IconButton(
-                    icon: new Image.asset("assets/website_logo_green.png"),
-                    onPressed: () {
-                      launchSocialMedia(websiteUrl);
-                    },
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    launchSocialMedia(websiteUrl);
-                  },
-                  child: Text(
-                    'blithchron.iitgn.ac.in',
-                    style: TextStyle(
-                      color: Colors.lightGreen,
-                      fontSize: _screenHeight * 0.02395,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: _screenHeight * 0.01197,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ///Insta
-                // Use the SizedBox if want to change icon size
-                // SizedBox(
-                //   height: 50,
-                //   width: 50,
-                //   child: IconButton(
-                //     icon: new Image.asset("assets/insta_logo_yellow2.png"),
-                //     onPressed: () {
-                //       launchSocialMedia(instaUrl);
-                //     },
-                //   ),
-                // ),
-                IconButton(
-                  icon: new Image.asset("assets/insta_logo_yellow2.png"),
-                  onPressed: () {
-                    launchSocialMedia(instaUrl);
-                  },
-                ),
-                // twitter
-                Padding(
-                  padding: EdgeInsets.fromLTRB(
-                      _screenWidth * 0.0509, 0.0, _screenWidth * 0.02546, 0.0),
-                  child: IconButton(
-                    icon: new Image.asset("assets/twitter_logo_yellow.png"),
-                    onPressed: () {
-                      launchSocialMedia(twitterUrl);
-                    },
-                  ),
-                ),
-                //youtube
-                Padding(
-                  padding: EdgeInsets.fromLTRB(
-                      _screenWidth * 0.02546, 0.0, _screenWidth * 0.0509, 0.0),
-                  child: IconButton(
-                    icon: new Image.asset("assets/youtube_logo_yellow.png"),
-                    onPressed: () {
-                      launchSocialMedia(youTubeUrl);
-                    },
-                  ),
-                ),
-
-                /// facebook
-                IconButton(
-                  icon: new Image.asset("assets/facebook_logo_yellow.png"),
-                  onPressed: () {
-                    launchSocialMedia(facebookUrl);
-                  },
-                ),
-              ],
-            ),
-            Padding(
-              padding:
-                  EdgeInsets.fromLTRB(0.0, _screenHeight * 0.01197, 0.0, 0.0),
-              child: Text('Contact Us',
-                  style: TextStyle(
-                    fontSize: _screenHeight * 0.0479,
-                    foreground: Paint()..shader = linearGradient,
-                  )),
-            ),
-            SizedBox(
-              height: _screenHeight * 0.01197,
-            ),
-            // message icon get from some package
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    launchEmail(email);
-                  },
-                  icon: new Image.asset('assets/email_logo_green.png'),
-                ),
-                SizedBox(
-                  width: _screenWidth * 0.05092,
-                ),
-                InkWell(
-                  onTap: () {
-                    launchEmail(email);
-                  },
-                  child: Text(
-                    'blithchron@iitgn.ac.in',
-                    style: TextStyle(
-                      color: Colors.lightGreen,
-                      fontSize: _screenHeight * 0.02395,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            //  we could create a widget but Lousy coding here repeating template four times feel free to change
-            SizedBox(height: _screenHeight * 0.0479),
-            Column(
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Container(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  // Add height and width acc to image size
-                  height: _screenHeight * 0.05988,
-                  width: _screenWidth * 0.50929,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade800,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15.0),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ClipRRect(child: null),
-
-                      /// add images once they come,
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Ashwani Rai',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: _screenHeight * 0.021559,
-                            ),
-                          ),
-                          SizedBox(height: _screenHeight * 0.00598),
-                          InkWell(
-                            onTap: () {
-                              launchPhoneCall(9766558626);
-                            },
-                            child: Text(
-                              '+91 97665 58626',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: _screenHeight * 0.01437,
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                SizedBox(
+                  height: _screenHeight * 0.01796,
+                  // height: 15,
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(
+                      0.0, _screenHeight * 0.01197, 0.0, 0.0),
+                  child: Text('Follow Us',
+                      style: TextStyle(
+                        fontSize: _screenHeight * 0.0479,
+                        foreground: Paint()..shader = linearGradient,
+                      )),
                 ),
                 SizedBox(
-                  height: _screenHeight * 0.023954,
+                  height: _screenHeight * 0.0059887,
                 ),
-                Container(
-                  // Add height and width acc to image size
-                  height: _screenHeight * 0.059887,
-                  width: _screenWidth * 0.509294,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade800,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(
+                          0.0, 0.0, _screenWidth * 0.0309, 0.0),
+                      child: IconButton(
+                        icon:
+                            new Image.asset("assets/social/website_white.png"),
+                        onPressed: () {
+                          launchSocialMedia(websiteUrl);
+                        },
+                      ),
                     ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ClipRRect(child: null),
-
-                      /// add images once they come,
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Eshika Pathak',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: _screenHeight * 0.021559,
-                            ),
-                          ),
-                          SizedBox(height: _screenHeight * 0.00598),
-                          InkWell(
-                            onTap: () {
-                              launchPhoneCall(9606643444);
-                            },
-                            child: Text(
-                              '+91 96066 43444',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: _screenHeight * 0.01437,
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                    InkWell(
+                      onTap: () {
+                        launchSocialMedia(websiteUrl);
+                      },
+                      child: Text(
+                        'blithchron.iitgn.ac.in',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: _screenHeight * 0.02395,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(
-                  height: _screenHeight * 0.023954,
+                  height: _screenHeight * 0.01197,
                 ),
-                Container(
-                  // Add height and width acc to image size
-                  height: _screenHeight * 0.059887,
-                  width: _screenWidth * 0.509294,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade800,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ///Insta
+                    // Use the SizedBox if want to change icon size
+                    // SizedBox(
+                    //   height: 50,
+                    //   width: 50,
+                    //   child: IconButton(
+                    //     icon: new Image.asset("assets/insta_logo_yellow2.png"),
+                    //     onPressed: () {
+                    //       launchSocialMedia(instaUrl);
+                    //     },
+                    //   ),
+                    // ),
+                    IconButton(
+                      icon: new Image.asset("assets/social/insta_white.png"),
+                      iconSize: _screenWidth * 0.005,
+                      onPressed: () {
+                        launchSocialMedia(instaUrl);
+                      },
                     ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ClipRRect(child: null),
+                    // twitter
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(
+                          _screenWidth * 0.04, 0.0, _screenWidth * 0.02, 0.0),
+                      child: IconButton(
+                        icon:
+                            new Image.asset("assets/social/twitter_white.png"),
+                        onPressed: () {
+                          launchSocialMedia(twitterUrl);
+                        },
+                      ),
+                    ),
+                    //youtube
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(
+                          _screenWidth * 0.02, 0.0, _screenWidth * 0.04, 0.0),
+                      child: IconButton(
+                        icon:
+                            new Image.asset("assets/social/youtube_white.png"),
+                        // iconSize: _screenWidth * 0.1,
+                        onPressed: () {
+                          launchSocialMedia(youTubeUrl);
+                        },
+                      ),
+                    ),
 
-                      /// add images once they come,
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Isha Bayad',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: _screenHeight * 0.021559,
-                            ),
-                          ),
-                          SizedBox(height: _screenHeight * 0.00598),
-                          InkWell(
-                            onTap: () {
-                              launchPhoneCall(9726845541);
-                            },
-                            child: Text(
-                              '+91 97268 45541',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: _screenHeight * 0.01437,
-                              ),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                    /// facebook
+                    IconButton(
+                      icon: new Image.asset("assets/social/facebook_white.png"),
+                      onPressed: () {
+                        launchSocialMedia(facebookUrl);
+                      },
+                    ),
+                  ],
+                ),
+
+                Padding(
+                  padding: EdgeInsets.fromLTRB(
+                      0.0, _screenHeight * 0.02197, 0.0, 0.0),
+                  child: Text('Contact Us',
+                      style: TextStyle(
+                        fontSize: _screenHeight * 0.0479,
+                        foreground: Paint()..shader = linearGradient,
+                      )),
                 ),
                 SizedBox(
-                  height: _screenHeight * 0.023954,
+                  height: _screenHeight * 0.00197,
                 ),
-                Container(
-                  // Add height and width acc to image size
-                  height: _screenHeight * 0.059887,
-                  width: _screenWidth * 0.509294,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade800,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(15.0),
+                // message icon get from some package
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        launchEmail(email);
+                      },
+                      icon: new Image.asset('assets/social/email_white.png'),
                     ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ClipRRect(child: null),
+                    SizedBox(
+                      width: _screenWidth * 0.05092,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        launchEmail(email);
+                      },
+                      child: Text(
+                        'blithchron@iitgn.ac.in',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: _screenHeight * 0.02395,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
 
-                      /// add images once they come,
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                // Contacts of Cores below
+                SizedBox(height: _screenHeight * 0.0229),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      // height: _screenHeight * 0.05988,
+                      height: _screenHeight * 0.09988,
+                      width: _screenWidth * 0.50929,
+                      decoration: shadow1,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            'Rushik Desai',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: _screenHeight * 0.021559,
-                            ),
-                          ),
-                          SizedBox(height: _screenHeight * 0.00598),
-                          InkWell(
-                            onTap: () {
-                              launchPhoneCall(8369610187);
-                            },
-                            child: Text(
-                              '+91 83696 10187',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: _screenHeight * 0.01437,
+                          Container(
+                            padding: EdgeInsets.fromLTRB(
+                                0, 0, _screenWidth * 0.01, 0),
+                            height: _screenHeight * 0.07988,
+                            child: ClipRRect(
+                              child: Image.asset(
+                                'assets/bitmoji/ashwani.png',
                               ),
                             ),
                           ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Ashwani Rai',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: _screenHeight * 0.021559,
+                                ),
+                              ),
+                              SizedBox(height: _screenHeight * 0.00598),
+                              InkWell(
+                                onTap: () {
+                                  launchPhoneCall(9766558626);
+                                },
+                                child: Text(
+                                  '+91 97665 58626',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: _screenHeight * 0.01437,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
                         ],
-                      )
-                    ],
-                  ),
-                ),
-                // SizedBox(
-                //   height: 20,
-                // ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: _screenHeight * 0.023954,
+                    ),
+                    Container(
+                      height: _screenHeight * 0.09988,
+                      width: _screenWidth * 0.509294,
+                      decoration: shadow1,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.fromLTRB(
+                                0, 0, _screenWidth * 0.01, 0),
+                            height: _screenHeight * 0.07988,
+                            child: ClipRRect(
+                              child: Image.asset(
+                                'assets/bitmoji/eshika.png',
+                              ),
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Eshika Pathak',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: _screenHeight * 0.021559,
+                                ),
+                              ),
+                              SizedBox(height: _screenHeight * 0.00598),
+                              InkWell(
+                                onTap: () {
+                                  launchPhoneCall(9606643444);
+                                },
+                                child: Text(
+                                  '+91 96066 43444',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: _screenHeight * 0.01437,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: _screenHeight * 0.023954,
+                    ),
+                    Container(
+                      height: _screenHeight * 0.09988,
+                      width: _screenWidth * 0.509294,
+                      decoration: shadow1,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.fromLTRB(
+                                0, 0, _screenWidth * 0.01, 0),
+                            height: _screenHeight * 0.07988,
+                            child: ClipRRect(
+                              child: Image.asset(
+                                'assets/bitmoji/isha.png',
+                              ),
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Isha Bayad',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: _screenHeight * 0.021559,
+                                ),
+                              ),
+                              SizedBox(height: _screenHeight * 0.00598),
+                              InkWell(
+                                onTap: () {
+                                  launchPhoneCall(9726845541);
+                                },
+                                child: Text(
+                                  '+91 97268 45541',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: _screenHeight * 0.01437,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: _screenHeight * 0.023954,
+                    ),
+                    Container(
+                      // Add height and width acc to image size
+                      height: _screenHeight * 0.09988,
+                      width: _screenWidth * 0.509294,
+                      decoration: shadow1,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.fromLTRB(
+                                0, 0, _screenWidth * 0.01, 0),
+                            height: _screenHeight * 0.07988,
+                            child: ClipRRect(
+                              child: Image.asset(
+                                'assets/bitmoji/rushik.png',
+                              ),
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'Rushik Desai',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: _screenHeight * 0.021559,
+                                ),
+                              ),
+                              SizedBox(height: _screenHeight * 0.00598),
+                              InkWell(
+                                onTap: () {
+                                  launchPhoneCall(8369610187);
+                                },
+                                child: Text(
+                                  '+91 83696 10187',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: _screenHeight * 0.01437,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                  ],
+                )
               ],
-            )
-          ],
+            ),
+          ),
         ),
       ),
     );
