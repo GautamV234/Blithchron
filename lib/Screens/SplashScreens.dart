@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'dart:async';
 import 'HomeScreen.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -34,17 +35,44 @@ class _SplashScreenState extends State<SplashScreen> {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xff1e2025),
-      body: Container(
-        height: _screenHeight * 0.9,
-        child: Center(
-          child: ClipRect(
-            child: Image.asset(
-              'assets/appLogo.png',
+        backgroundColor: Color(0xff1e2025),
+        body: Stack(
+          children: [
+            Transform.translate(
+              offset: Offset(_screenWidth * 0.01273, 0.0),
+              child: Container(
+                  height: _screenHeight * 0.9,
+                  child: Center(
+                    child: ClipRect(
+                      child: Image.asset(
+                        'assets/appLogo.png',
+                      ),
+                    ),
+                  )),
             ),
-          ),
-        ),
-      ),
-    );
+            // Positioned(
+            //   top: _screenHeight * 0.68,
+            //   left: _screenWidth * 0.36,
+            //   child: Container(
+            //     child: SpinKitRipple(
+            //       borderWidth: 10.0,
+            //       size: 100.0,
+            //       color: Colors.grey[700],
+            //     ),
+            //   ),
+            // ),
+            Positioned(
+              top: _screenHeight * 0.68,
+              left: _screenWidth * 0.43,
+              child: Container(
+                child: SpinKitRing(
+                  // borderWidth: 40.0,
+                  size: _screenHeight * 0.05988,
+                  color: Colors.grey[700],
+                ),
+              ),
+            ),
+          ],
+        ));
   }
 }
