@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../Widgets/OurTeamItem.dart';
-import '../Widgets/MyDrawer.dart';
 
 class OurTeamScreen extends StatelessWidget {
   // @override
@@ -100,7 +99,6 @@ class OurTeamScreen extends StatelessWidget {
     );
 
     return Scaffold(
-      drawer: MyDrawer(),
       backgroundColor: Color(0xff1e2025),
       appBar: AppBar(
         backgroundColor: Color(0xff1e2025),
@@ -121,11 +119,12 @@ class OurTeamScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: _screenHeight * 0.0479,
+                  height: _screenHeight * 0.0579,
                 ),
                 SafeArea(
                   child: Container(
-                    height: _screenHeight * 0.3793,
+                    // height: _screenHeight * 0.3793,
+                    height: _screenHeight * 0.4793,
                     width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(
@@ -136,8 +135,8 @@ class OurTeamScreen extends StatelessWidget {
                           padding: EdgeInsets.fromLTRB(_screenWidth * 0.0207, 0,
                               _screenWidth * 0.0207, 0),
                           child: Container(
-                            width: _screenWidth * 0.10185,
-                            alignment: Alignment.centerLeft,
+                            width: _screenWidth * 0.08,
+                            alignment: Alignment.topCenter,
                             child: Text(
                               'C\nO\nR\nE\nS',
                               style: TextStyle(
@@ -183,7 +182,8 @@ class OurTeamScreen extends StatelessWidget {
                 ),
                 SafeArea(
                   child: Container(
-                    height: _screenHeight * 0.7746,
+                    // height: _screenHeight * 0.7746,
+                    height: _screenHeight * 0.93,
                     width: _screenWidth * 0.9,
                     alignment: Alignment.centerLeft,
                     child: Row(
@@ -194,8 +194,8 @@ class OurTeamScreen extends StatelessWidget {
                           padding: EdgeInsets.fromLTRB(_screenWidth * 0.0207, 0,
                               _screenWidth * 0.0207, 0),
                           child: Container(
-                            width: _screenWidth * 0.10185,
-                            alignment: Alignment.centerLeft,
+                            width: _screenWidth * 0.08,
+                            alignment: Alignment.topCenter,
                             child: Text(
                               'C\nO\nO\nR\nD\nI\nN\nA\nT\nO\nR\nS',
                               style: TextStyle(
