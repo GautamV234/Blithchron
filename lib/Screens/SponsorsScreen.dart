@@ -26,6 +26,7 @@ class SponsorsScreen extends StatelessWidget {
       _screenWidth = data.size.height;
     }
     /////////////////////////
+
     final Shader linearGradient = LinearGradient(
       colors: <Color>[
         Color(0xff64d2ff),
@@ -39,74 +40,52 @@ class SponsorsScreen extends StatelessWidget {
     );
 
     return Scaffold(
-      backgroundColor: Color(0xff1e2025),
-      appBar: AppBar(
         backgroundColor: Color(0xff1e2025),
-      ),
-      body: SingleChildScrollView(
-        child: SafeArea(
-            child: Container(
-          child: Column(
-            children: [
-              SizedBox(
-                height: _screenHeight * 0.02994,
-              ),
-              Container(
-                height: _screenHeight * 0.08384,
-                width: _screenWidth * 0.611,
-                padding: EdgeInsets.fromLTRB(
-                    _screenWidth * 0.02546,
-                    _screenHeight * 0.01197,
-                    _screenWidth * 0.02546,
-                    _screenHeight * 0.01197),
-                // padding: EdgeInsets.all(10),
-
-                child: Center(
-                  child: Text(
-                    'Sponsors',
-                    style: TextStyle(
-                      fontSize: _screenHeight * 0.0479,
-                      foreground: Paint()..shader = linearGradient,
-                    ),
+        // appBar: AppBar(
+        //   backgroundColor: Color(0xff1e2025),
+        // ),
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              backgroundColor: Color(0xff1e2025),
+              expandedHeight: _screenHeight * 0.1796,
+              floating: false,
+              pinned: true,
+              // snap: true,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text(
+                  'Sponsors',
+                  style: TextStyle(
+                    fontSize: _screenHeight * 0.0379,
+                    foreground: Paint()..shader = linearGradient,
                   ),
                 ),
+                centerTitle: true,
+                collapseMode: CollapseMode.pin,
               ),
-              SizedBox(
-                height: _screenHeight * 0.0479,
-                // height: 40,
+            ),
+            SliverGrid(
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: _screenWidth * 0.5092,
+                // maxCrossAxisExtent: 200,
+                childAspectRatio: 1.2,
+                crossAxisSpacing: _screenWidth * 0.0127,
+                mainAxisSpacing: _screenHeight * 0.00958,
+                // crossAxisSpacing: 5,
+                // mainAxisSpacing: 8.0,
               ),
-              SafeArea(
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(
-                      _screenWidth * 0.02546, 0, _screenWidth * 0.02546, 0),
-                  height: _screenHeight -
-                      _screenHeight *
-                          0.2275, // change these values correspondingly,
-                  child: GridView.builder(
-                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: _screenWidth * 0.5092,
-                      // maxCrossAxisExtent: 200,
-                      childAspectRatio: 1.2,
-                      crossAxisSpacing: _screenWidth * 0.0127,
-                      mainAxisSpacing: _screenHeight * 0.00958,
-                      // crossAxisSpacing: 5,
-                      // mainAxisSpacing: 8.0,
-                    ),
-                    itemBuilder: (ctx, i) {
-                      return SponsorItem(
-                        sponsorName: sponsorsList[i].sponsorName,
-                        sponsorTitle: sponsorsList[i].sponsorTitle,
-                        sponsorUrl: sponsorsList[i].sponsorUrl,
-                      );
-                    },
-                    itemCount: sponsorsList.length,
-                  ),
-                ),
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int i) {
+                  return SponsorItem(
+                    sponsorName: sponsorsList[i].sponsorName,
+                    sponsorTitle: sponsorsList[i].sponsorTitle,
+                    sponsorUrl: sponsorsList[i].sponsorUrl,
+                  );
+                },
+                childCount: sponsorsList.length,
               ),
-            ],
-          ),
-        )),
-      ),
-    );
+            )
+          ],
+        ));
   }
 }
