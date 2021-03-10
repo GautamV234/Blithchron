@@ -74,8 +74,8 @@ class MyDrawer extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              // height: _screenHeight * 0.07,
-              height: _screenHeight * 0.035,
+              height: _screenHeight * 0.07,
+              // height: _screenHeight * 0.035,
             ),
 
             /// Not decided whether to keep the Blithchron '21 heading or not,

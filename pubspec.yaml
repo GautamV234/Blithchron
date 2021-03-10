@@ -26,6 +26,7 @@ dependencies:
   provider: ^4.3.2+2
   url_launcher: ^5.2.5
   vs_scrollbar: ^0.1.2
+  
   # draggable_scrollbar: ^0.0.4
 
 
@@ -38,11 +39,18 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: "^0.8.0"
+  
+  # flutter_launcher_icons: ^0.9.0
+
+# flutter_icons :
+# android : 
 
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/appLogo.jpg"    
+  image_path: "assets/appLogo.png" 
+  adaptive_icon_background: "0xff26292e"
+  adaptive_icon_foreground: "assets/appLogo.png"      
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
