@@ -56,6 +56,19 @@ class DevPage extends StatelessWidget {
       Rect.fromLTWH(0.0, 0.0, _screenWidth * 0.65, 70.0),
     );
 
+    //    Future<void> launchEmail(String email) async {
+    //   var url = "mailto:$email";
+    //   if (await canLaunch(url)) {
+    //     await launch(
+    //       url,
+    //       // forceSafariVC: false,
+    //       // forceWebView: false,
+    //     );
+    //   } else {
+    //     throw 'Could not call $email';
+    //   }
+    // }
+
     return Scaffold(
         drawer: MyDrawer(),
         backgroundColor: Color(0xff1e2025),
