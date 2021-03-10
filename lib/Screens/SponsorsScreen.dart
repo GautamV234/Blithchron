@@ -1,4 +1,3 @@
-
 // THIS IS THE OLD WORKING CODE
 
 // import 'package:flutter/material.dart';
@@ -96,7 +95,6 @@
 //   }
 // }
 
-
 // NEW BUGGY CODE
 
 import 'package:flutter/material.dart';
@@ -190,21 +188,26 @@ class SponsorsScreen extends StatelessWidget {
                 childCount: newsponsorsList.length,
               ),
             ),
-            Container(
-              height: _screenHeight * 0.08384,
-              width: _screenWidth * 0.611,
-              padding: EdgeInsets.fromLTRB(
-                  _screenWidth * 0.02546,
-                  _screenHeight * 0.01197,
-                  _screenWidth * 0.02546,
-                  _screenHeight * 0.01197),
-              // padding: EdgeInsets.all(10),
-              child: Center(
-                child: Text(
-                  'Past Sponsors',
-                  style: TextStyle(
-                    fontSize: _screenHeight * 0.0479,
-                    foreground: Paint()..shader = linearGradient,
+            SliverToBoxAdapter(
+              child: SizedBox(height: _screenHeight * 0.07),
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                height: _screenHeight * 0.08384,
+                width: _screenWidth * 0.611,
+                padding: EdgeInsets.fromLTRB(
+                    _screenWidth * 0.02546,
+                    _screenHeight * 0.01197,
+                    _screenWidth * 0.02546,
+                    _screenHeight * 0.01197),
+                // padding: EdgeInsets.all(10),
+                child: Center(
+                  child: Text(
+                    'Past Sponsors',
+                    style: TextStyle(
+                      fontSize: _screenHeight * 0.0479,
+                      foreground: Paint()..shader = linearGradient,
+                    ),
                   ),
                 ),
               ),
