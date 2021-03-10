@@ -171,7 +171,7 @@ class SponsorsScreen extends StatelessWidget {
               gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: _screenWidth * 0.5092,
                 // maxCrossAxisExtent: 200,
-                childAspectRatio: 1.2,
+                childAspectRatio: 1.15,
                 crossAxisSpacing: _screenWidth * 0.0127,
                 mainAxisSpacing: _screenHeight * 0.00958,
                 // crossAxisSpacing: 5,
@@ -216,7 +216,7 @@ class SponsorsScreen extends StatelessWidget {
               gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: _screenWidth * 0.5092,
                 // maxCrossAxisExtent: 200,
-                childAspectRatio: 1.2,
+                childAspectRatio: 1.15,
                 crossAxisSpacing: _screenWidth * 0.0127,
                 mainAxisSpacing: _screenHeight * 0.00958,
                 // crossAxisSpacing: 5,

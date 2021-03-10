@@ -30,7 +30,7 @@ class EventsProvider with ChangeNotifier {
       eventRegister:
           'https://docs.google.com/forms/d/e/1FAIpQLScps9WaR44CM-CT7ZLAjHxJx0CqtIoLYR9r3reiK_UxFMmWvA/viewform?usp=sf_link',
       eventRuleBook:
-          'https://drive.google.com/file/d/17kSkZppqjO0OqbuEZCXvEhX1KklJO4Ky/view?usp=drivesdk',
+          'https://drive.google.com/file/d/1URoEm-x7YtOjVzlZPGql0OwFyQt7lVvm/view',
     ),
     EventsModel(
       eventName: 'Reverb',

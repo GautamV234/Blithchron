@@ -280,7 +280,7 @@ class ContactUsScreen extends StatelessWidget {
                                 'Ashwani Rai',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: _screenHeight * 0.021559,
+                                  fontSize: _screenHeight * 0.019559,
                                 ),
                               ),
                               SizedBox(height: _screenHeight * 0.00598),
@@ -329,7 +329,8 @@ class ContactUsScreen extends StatelessWidget {
                                 'Eshika Pathak',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: _screenHeight * 0.021559,
+                                  fontSize: _screenHeight * 0.019559,
+                                  // fontSize: _screenHeight * 0.021559,
                                 ),
                               ),
                               SizedBox(height: _screenHeight * 0.00598),
@@ -378,7 +379,8 @@ class ContactUsScreen extends StatelessWidget {
                                 'Isha Bayad',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: _screenHeight * 0.021559,
+                                  fontSize: _screenHeight * 0.019559,
+                                  // fontSize: _screenHeight * 0.021559,
                                 ),
                               ),
                               SizedBox(height: _screenHeight * 0.00598),
@@ -428,7 +430,8 @@ class ContactUsScreen extends StatelessWidget {
                                 'Rushik Desai',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: _screenHeight * 0.021559,
+                                  fontSize: _screenHeight * 0.019559,
+                                  // fontSize: _screenHeight * 0.021559,
                                 ),
                               ),
                               SizedBox(height: _screenHeight * 0.00598),

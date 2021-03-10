@@ -1,3 +1,4 @@
+import 'package:Blith1/Widgets/MyDrawer.dart';
 import 'package:flutter/material.dart';
 import '../Widgets/OurTeamItem.dart';
 
@@ -100,6 +101,7 @@ class OurTeamScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Color(0xff1e2025),
+      drawer: MyDrawer(),
       appBar: AppBar(
         backgroundColor: Color(0xff1e2025),
       ),

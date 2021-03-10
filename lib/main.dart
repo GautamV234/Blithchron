@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: "Blithchron '21",
         theme: ThemeData(
           visualDensity: VisualDensity.adaptivePlatformDensity,
           fontFamily: 'Raleway',
