@@ -1,2 +1,2 @@
 # Blithchron
-The Official App of Blith 2020
+The Official App of Blith 2021
