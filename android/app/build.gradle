@@ -31,7 +31,8 @@ def keystoreProperties = new Properties()
     def keystorePropertiesFile = rootProject.file('key.properties')
     if (keystorePropertiesFile.exists()) {
         keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-    }
+}
+
 android {
     compileSdkVersion 29
 
@@ -51,7 +52,7 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
-
+    
     signingConfigs {
        release {
            keyAlias keystoreProperties['keyAlias']
@@ -60,13 +61,11 @@ android {
            storePassword keystoreProperties['storePassword']
        }
    }
-    buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
-        }
-    }
+   buildTypes {
+       release {
+           signingConfig signingConfigs.release
+       }
+   }
 }
 
 flutter {

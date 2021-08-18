@@ -87,7 +87,7 @@ class EventsItem extends StatelessWidget {
                   child: Transform(
                     transform: Matrix4.skewX(0.4),
                     child: Text(
-                      'Rule Book  ', // space --- intentional
+                      'Rulebook', // space --- intentional
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: _screenHeight * 0.01676,
