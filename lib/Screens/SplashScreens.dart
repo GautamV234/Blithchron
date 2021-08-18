@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Timer(Duration(seconds: 3), () async {
-      Navigator.pushNamed(context, HomeScreen.routeName);
+      Navigator.pushReplacementNamed(context, HomeScreen.routeName);
     });
   }
 

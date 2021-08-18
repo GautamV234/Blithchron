@@ -1,4 +1,4 @@
-import 'package:Blith1/Widgets/HomeScreenItem.dart';
+// import 'package:Blith1/Widgets/HomeScreenItem.dart';
 import 'package:flutter/material.dart';
 import '../Model/HomeScreenModel.dart';
 
@@ -10,7 +10,7 @@ class EventsDataProvider with ChangeNotifier {
       dateSuffix: 'th',
       dateMonth: 'MAR',
       eventName: 'Reverb',
-      eventDescription: 'Registeration is live!',
+      eventDescription: 'An EDM production competition',
       color: [Color(0xff9a68f8), Color(0xff8a48fd), Color(0xff7320fe)],
       routeName: 'None',
     ),
@@ -20,7 +20,7 @@ class EventsDataProvider with ChangeNotifier {
       dateSuffix: 'th',
       dateMonth: 'MAR',
       eventName: 'Mezkala',
-      eventDescription: 'Registeration is live!',
+      eventDescription: 'Blending dance forms',
       color: [Color(0xffff6ed1), Color(0xffff21e0), Color(0xffff27e0)],
       routeName: 'None',
     ),
@@ -30,7 +30,7 @@ class EventsDataProvider with ChangeNotifier {
       dateSuffix: 'th',
       dateMonth: 'MAR',
       eventName: 'Unkahi',
-      eventDescription: 'Registeration is live!',
+      eventDescription: 'Find your solace in poetry!',
       color: [Color(0xff5ea8fe), Color(0xff3e93fe), Color(0xff347def)],
       routeName: 'None',
     ),
@@ -40,7 +40,7 @@ class EventsDataProvider with ChangeNotifier {
       dateSuffix: 'th',
       dateMonth: 'MAR',
       eventName: 'ExaggeratAD',
-      eventDescription: 'Registeration is live!',
+      eventDescription: 'Create MAD ads and win big!',
       color: [Color(0xff27d1e6), Color(0xff1dc9de), Color(0xff12b7cc)],
       routeName: 'None',
     ),
@@ -50,7 +50,7 @@ class EventsDataProvider with ChangeNotifier {
       dateSuffix: 'nd',
       dateMonth: 'MAR',
       eventName: 'Skirmish',
-      eventDescription: 'Registeration is live!',
+      eventDescription: 'A gaming event',
       color: [Color(0xff3ee4ab), Color(0xff07e19d), Color(0xff03beab)],
       routeName: 'None',
     ),
@@ -60,7 +60,8 @@ class EventsDataProvider with ChangeNotifier {
       dateSuffix: 'nd',
       dateMonth: 'MAR',
       eventName: 'Lenz Law',
-      eventDescription: 'Registeration is live!',
+      eventDescription:
+          'Ready for a 15 second photo challenge and some theme based photography?',
       color: [Color(0xff5ea8fe), Color(0xff3e93fe), Color(0xff347def)],
       routeName: 'None',
     ),
@@ -70,7 +71,7 @@ class EventsDataProvider with ChangeNotifier {
       dateSuffix: 'th',
       dateMonth: 'MAR',
       eventName: 'Quizzitch',
-      eventDescription: 'Registeration is live!',
+      eventDescription: 'Harry Potter and F.R.I.E.N.D.S fandom quiz',
       color: [Color(0xff9a68f8), Color(0xff8a48fd), Color(0xff7320fe)],
       routeName: 'None',
     ),
